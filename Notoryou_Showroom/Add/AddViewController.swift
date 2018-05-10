@@ -11,8 +11,9 @@ import SDWebImage
 
 class AddViewController: UIViewController, UITextFieldDelegate {
 
+// to do rajouter un textfield pour url image
 
-
+  @IBOutlet weak var previewTextField: UITextField!
   @IBOutlet weak var urlTextField: UITextField!
   @IBOutlet weak var titleTextField: UITextField!
   override func viewDidLoad() {
@@ -20,24 +21,24 @@ class AddViewController: UIViewController, UITextFieldDelegate {
 
     urlTextField.delegate = self
     titleTextField.delegate = self
-        // Do any additional setup after loading the view.
+    
     }
 
-  @IBOutlet weak var imageView: UIImageView!
-  
+
+
   @IBAction func AddVisit(_ sender: UIButton) {
     var newShow: Show?
-    
-    if urlTextField.text != nil {
-//      let imageUrl = URLParser.shared.parseURL(url: urlTextField.text!)
-//      newShow = Show(title: titleTextField.text!, url: urlTextField.text!, imageName: "")
-      let requestUrl = "https://my.matterport.com/api/v1/player/models/\(urlTextField.text!)/thumb"
-      print(requestUrl)
-      imageView.sd_setImage(with: URL(string: requestUrl), placeholderImage: #imageLiteral(resourceName: "logo_nty"))
-      imageView.sd_setShowActivityIndicatorView(true)
-      imageView.sd_setIndicatorStyle(.gray)
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy MM dd"
+    let saveDate = formatter.string(from: Date())
+    if titleTextField != nil && urlTextField.text != nil && previewTextField.text != nil {
+      FirebaseManager.shared.createVisit(user: "mathieu", date: saveDate, title: titleTextField.text!, id: urlTextField.text!, imageUrl: previewTextField.text!)
+ 
     }
-    //print(newShow?.title)
+    else {
+      // todo rajouter une alerte
+      print("fufill all fields")
+    }
   }
   
   

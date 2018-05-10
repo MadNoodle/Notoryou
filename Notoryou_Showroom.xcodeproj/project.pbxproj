@@ -10,7 +10,9 @@
 		107BE4A559F02EFF14E971E9 /* Pods_Notoryou_Showroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92898CA4BC10B7052E8A437 /* Pods_Notoryou_Showroom.framework */; };
 		B95B0F7120A2E25200159A2B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B0F6F20A2E25200159A2B /* AddViewController.swift */; };
 		B95B0F7220A2E25200159A2B /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95B0F7020A2E25200159A2B /* AddViewController.xib */; };
-		B95B0F7420A2E6A200159A2B /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B0F7320A2E6A200159A2B /* URLParser.swift */; };
+		B969BBA420A487D100227EA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969BBA320A487D100227EA7 /* User.swift */; };
+		B96C83CC20A352A40022D1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B96C83CB20A352A40022D1F9 /* GoogleService-Info.plist */; };
+		B96C83CE20A3539B0022D1F9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */; };
 		B9D1CEF520A201FF00B3F8B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1CEF420A201FF00B3F8B3 /* AppDelegate.swift */; };
 		B9D1CEFC20A2020200B3F8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D1CEFB20A2020200B3F8B3 /* Assets.xcassets */; };
 		B9D1CEFF20A2020200B3F8B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D1CEFD20A2020200B3F8B3 /* LaunchScreen.storyboard */; };
@@ -30,7 +32,9 @@
 		B92898CA4BC10B7052E8A437 /* Pods_Notoryou_Showroom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notoryou_Showroom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95B0F6F20A2E25200159A2B /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		B95B0F7020A2E25200159A2B /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
-		B95B0F7320A2E6A200159A2B /* URLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParser.swift; sourceTree = "<group>"; };
+		B969BBA320A487D100227EA7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B96C83CB20A352A40022D1F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B9D1CEF120A201FF00B3F8B3 /* Notoryou_Showroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notoryou_Showroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D1CEF420A201FF00B3F8B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D1CEFB20A2020200B3F8B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +76,7 @@
 			children = (
 				B95B0F6F20A2E25200159A2B /* AddViewController.swift */,
 				B95B0F7020A2E25200159A2B /* AddViewController.xib */,
-				B95B0F7320A2E6A200159A2B /* URLParser.swift */,
+				B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -98,6 +102,7 @@
 		B9D1CEF320A201FF00B3F8B3 /* Notoryou_Showroom */ = {
 			isa = PBXGroup;
 			children = (
+				B95B0F6E20A2E23800159A2B /* Add */,
 				B9D1CF0B20A2029400B3F8B3 /* Home */,
 				B9D1CF2B20A2D3B600B3F8B3 /* Player */,
 				B9D1CF0620A2026C00B3F8B3 /* SupportingFiles */,
@@ -109,6 +114,7 @@
 		B9D1CF0620A2026C00B3F8B3 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				B96C83CB20A352A40022D1F9 /* GoogleService-Info.plist */,
 				B9D1CF2620A2434400B3F8B3 /* notoryou.js */,
 				B9D1CEF420A201FF00B3F8B3 /* AppDelegate.swift */,
 				B9D1CEFB20A2020200B3F8B3 /* Assets.xcassets */,
@@ -120,7 +126,6 @@
 		B9D1CF0B20A2029400B3F8B3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B95B0F6E20A2E23800159A2B /* Add */,
 				B9D1CF2A20A2D3A500B3F8B3 /* View */,
 				B9D1CF2920A2D39900B3F8B3 /* Controller */,
 				B9D1CF2820A2D39000B3F8B3 /* Model */,
@@ -132,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D1CF1820A2197D00B3F8B3 /* Show.swift */,
+				B969BBA320A487D100227EA7 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 				B9D1CF2120A21FA500B3F8B3 /* Showcell.xib in Resources */,
 				B95B0F7220A2E25200159A2B /* AddViewController.xib in Resources */,
 				B9D1CF1D20A21ABD00B3F8B3 /* HomeViewController.xib in Resources */,
+				B96C83CC20A352A40022D1F9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +336,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B95B0F7420A2E6A200159A2B /* URLParser.swift in Sources */,
 				B9D1CF1C20A21ABD00B3F8B3 /* HomeViewController.swift in Sources */,
 				B9D1CF1920A2197D00B3F8B3 /* Show.swift in Sources */,
+				B96C83CE20A3539B0022D1F9 /* FirebaseManager.swift in Sources */,
 				B95B0F7120A2E25200159A2B /* AddViewController.swift in Sources */,
+				B969BBA420A487D100227EA7 /* User.swift in Sources */,
 				B9D1CF2020A21FA500B3F8B3 /* Showcell.swift in Sources */,
 				B9D1CEF520A201FF00B3F8B3 /* AppDelegate.swift in Sources */,
 				B9D1CF2420A2206A00B3F8B3 /* PlayerViewController.swift in Sources */,
@@ -475,7 +483,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V8A9QAD896;
 				INFOPLIST_FILE = Notoryou_Showroom/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mathieujanneau.Notoryou-Showroom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -491,7 +502,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V8A9QAD896;
 				INFOPLIST_FILE = Notoryou_Showroom/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mathieujanneau.Notoryou-Showroom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

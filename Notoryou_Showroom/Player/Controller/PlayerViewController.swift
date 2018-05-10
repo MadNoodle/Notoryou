@@ -10,7 +10,9 @@ import UIKit
 import WebKit
 
 class PlayerViewController: UIViewController,WKUIDelegate, WKNavigationDelegate {
+  
   var url = ""
+  
   @IBOutlet weak var wkView: WKWebView!
   
   override func viewDidLoad() {
@@ -24,7 +26,6 @@ class PlayerViewController: UIViewController,WKUIDelegate, WKNavigationDelegate 
 
   func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
     if navigationAction.targetFrame == nil {
-      //webView.load(navigationAction.request)
       UIApplication.shared.open(navigationAction.request.url!, options: [:])
     }
     return nil

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_nty" translatesAutoresizingMaskIntoConstraints="NO" id="oF7-Xp-bhn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logonb" translatesAutoresizingMaskIntoConstraints="NO" id="oF7-Xp-bhn">
                                 <rect key="frame" x="87" y="264" width="200" height="139"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1el-UQ-Z53"/>
@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.070033483209999997" green="0.070033483209999997" blue="0.070033483209999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oF7-Xp-bhn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0Y3-6R-k5L"/>
                             <constraint firstItem="oF7-Xp-bhn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GdD-hI-Vb6"/>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo_nty" width="200" height="139"/>
+        <image name="logonb" width="960" height="720"/>
     </resources>
 </document>

@@ -14,28 +14,47 @@ class HomeViewController: UIViewController {
   var shows = [Show]()
   var currentShow: Show?
   
+ 
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Visites"
-    shows = Show.loadShows()
-    // Register cell classes
-    let nib = UINib(nibName: "Showcell", bundle: nil)
-   tableView.register(nib, forCellReuseIdentifier: "myCell")
-    tableView.delegate = self
-    tableView.dataSource = self
-    tableView.reloadData()
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addShow))
-    self.navigationItem.rightBarButtonItem = addButton
+    shouldSetUpUI()
+    DispatchQueue.main.async {
+      FirebaseManager.shared.loadVisits(for: "admin") { (result) in
+        if result != nil{
+          self.shows = result!
+          self.tableView.reloadData()
+        } else {
+          // to do show alert
+          print("error empty")
+        }
+      }
+    }
+    
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
     tableView.reloadData()
   }
+  // CallBack function for navBAr button
   @objc func addShow() {
     let addVc = AddViewController()
     self.navigationController?.pushViewController(addVc, animated: true)
   }
   
+  
+  fileprivate func shouldSetUpUI() {
+    // Register cell classes
+    let nib = UINib(nibName: "Showcell", bundle: nil)
+    tableView.register(nib, forCellReuseIdentifier: "myCell")
+    tableView.delegate = self
+    tableView.dataSource = self
+    
+    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addShow))
+    self.navigationItem.rightBarButtonItem = addButton
+  }
   
 }
 
@@ -53,11 +72,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? Showcell
+    // load title
     cell?.showTitle.text = shows[indexPath.row].title
-    if let thumb = URL(string: shows[indexPath.row].imageName){ cell?.thumbnail.sd_setImage(with: thumb , placeholderImage: #imageLiteral(resourceName: "logo_nty"), options: [.continueInBackground, .progressiveDownload])}
+    // load image
+    cell?.thumbnail.sd_setImage(with: URL(string:shows[indexPath.row].imageName) , placeholderImage: #imageLiteral(resourceName: "logo_nty"), options: [.continueInBackground, .progressiveDownload])
     print(shows[indexPath.row].imageName)
     
-    //cell?.thumbnail.image = UIImage(named: shows[indexPath.row].imageName)
     
     return cell!
   }
