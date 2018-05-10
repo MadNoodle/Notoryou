@@ -20,6 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // initialize Firebase
     FirebaseApp.configure()
     Database.database().isPersistenceEnabled = true
+    
+    // set navBar appearance
+    UINavigationBar.appearance().tintColor = .white
+    UINavigationBar.appearance().barTintColor = .black
+    UINavigationBar.appearance().isOpaque = false
+   UINavigationBar.appearance().barStyle = .blackOpaque
+    let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+    UINavigationBar.appearance().titleTextAttributes = textAttributes
+    
     // Set initial Controller without storyboard
     window = UIWindow(frame: UIScreen.main.bounds)
     let homeVc = HomeViewController()

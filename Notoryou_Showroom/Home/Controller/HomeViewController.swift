@@ -13,18 +13,31 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   var shows = [Show]()
   var currentShow: Show?
+  var currentUser: User!
+   let blackView = UIView()
+
+ let indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
   
- 
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "Visites"
+    self.title = "Tours"
     shouldSetUpUI()
+    showLoader()
+    
     DispatchQueue.main.async {
       FirebaseManager.shared.loadVisits(for: "admin") { (result) in
         if result != nil{
           self.shows = result!
           self.tableView.reloadData()
+          // hide loader
+          UIView.animate(withDuration: 0.5, animations: {
+            self.blackView.layer.opacity = 0
+          })
+          self.indicator.stopAnimating()
+          self.indicator.removeFromSuperview()
+          self.blackView.removeFromSuperview()
         } else {
           // to do show alert
           print("error empty")
@@ -44,18 +57,32 @@ class HomeViewController: UIViewController {
     self.navigationController?.pushViewController(addVc, animated: true)
   }
   
-  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
   fileprivate func shouldSetUpUI() {
+   self.setNeedsStatusBarAppearanceUpdate()
     // Register cell classes
     let nib = UINib(nibName: "Showcell", bundle: nil)
     tableView.register(nib, forCellReuseIdentifier: "myCell")
     tableView.delegate = self
     tableView.dataSource = self
-    
+    self.navigationController?.navigationBar.isTranslucent = false
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addShow))
     self.navigationItem.rightBarButtonItem = addButton
   }
   
+  fileprivate func showLoader() {
+    // add black bg
+    self.view.addSubview(blackView)
+    blackView.layer.opacity = 1
+    blackView.frame = self.view.frame
+    blackView.backgroundColor = .black
+    // show spinner
+    self.view.addSubview(indicator)
+    indicator.frame = self.view.frame
+    indicator.startAnimating()
+  }
 }
 
 

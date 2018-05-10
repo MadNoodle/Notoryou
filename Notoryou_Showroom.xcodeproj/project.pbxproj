@@ -11,6 +11,8 @@
 		B95B0F7120A2E25200159A2B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B0F6F20A2E25200159A2B /* AddViewController.swift */; };
 		B95B0F7220A2E25200159A2B /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95B0F7020A2E25200159A2B /* AddViewController.xib */; };
 		B969BBA420A487D100227EA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969BBA320A487D100227EA7 /* User.swift */; };
+		B969BBA620A4C5C800227EA7 /* ArrayFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969BBA520A4C5C800227EA7 /* ArrayFilter.swift */; };
+		B969BBA920A4E21200227EA7 /* UserAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969BBA820A4E21200227EA7 /* UserAlert.swift */; };
 		B96C83CC20A352A40022D1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B96C83CB20A352A40022D1F9 /* GoogleService-Info.plist */; };
 		B96C83CE20A3539B0022D1F9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */; };
 		B9D1CEF520A201FF00B3F8B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1CEF420A201FF00B3F8B3 /* AppDelegate.swift */; };
@@ -33,6 +35,8 @@
 		B95B0F6F20A2E25200159A2B /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		B95B0F7020A2E25200159A2B /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 		B969BBA320A487D100227EA7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B969BBA520A4C5C800227EA7 /* ArrayFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayFilter.swift; sourceTree = "<group>"; };
+		B969BBA820A4E21200227EA7 /* UserAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlert.swift; sourceTree = "<group>"; };
 		B96C83CB20A352A40022D1F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B9D1CEF120A201FF00B3F8B3 /* Notoryou_Showroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notoryou_Showroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,14 +75,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B95B0F6E20A2E23800159A2B /* Add */ = {
+		B95B0F6E20A2E23800159A2B /* AddVisit */ = {
 			isa = PBXGroup;
 			children = (
 				B95B0F6F20A2E25200159A2B /* AddViewController.swift */,
 				B95B0F7020A2E25200159A2B /* AddViewController.xib */,
-				B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */,
 			);
-			path = Add;
+			path = AddVisit;
+			sourceTree = "<group>";
+		};
+		B969BBA720A4CF6000227EA7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B969BBA520A4C5C800227EA7 /* ArrayFilter.swift */,
+				B969BBA820A4E21200227EA7 /* UserAlert.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B9D1CEE820A201FF00B3F8B3 = {
@@ -102,7 +114,9 @@
 		B9D1CEF320A201FF00B3F8B3 /* Notoryou_Showroom */ = {
 			isa = PBXGroup;
 			children = (
-				B95B0F6E20A2E23800159A2B /* Add */,
+				B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */,
+				B969BBA720A4CF6000227EA7 /* Helpers */,
+				B95B0F6E20A2E23800159A2B /* AddVisit */,
 				B9D1CF0B20A2029400B3F8B3 /* Home */,
 				B9D1CF2B20A2D3B600B3F8B3 /* Player */,
 				B9D1CF0620A2026C00B3F8B3 /* SupportingFiles */,
@@ -342,8 +356,10 @@
 				B95B0F7120A2E25200159A2B /* AddViewController.swift in Sources */,
 				B969BBA420A487D100227EA7 /* User.swift in Sources */,
 				B9D1CF2020A21FA500B3F8B3 /* Showcell.swift in Sources */,
+				B969BBA620A4C5C800227EA7 /* ArrayFilter.swift in Sources */,
 				B9D1CEF520A201FF00B3F8B3 /* AppDelegate.swift in Sources */,
 				B9D1CF2420A2206A00B3F8B3 /* PlayerViewController.swift in Sources */,
+				B969BBA920A4E21200227EA7 /* UserAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
