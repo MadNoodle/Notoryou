@@ -12,7 +12,9 @@ import SDWebImage
 class AddViewController: UIViewController, UITextFieldDelegate {
 
   var isPublic = 0
-
+  var currentUser = ""
+  var delegate: UserLoggedDelegate!
+  
   @IBOutlet weak var previewTextField: UITextField!
   @IBOutlet weak var urlTextField: UITextField!
   @IBOutlet weak var titleTextField: UITextField!
@@ -20,6 +22,10 @@ class AddViewController: UIViewController, UITextFieldDelegate {
   override func viewDidLoad() {
         super.viewDidLoad()
   
+    // load current user
+    if delegate != nil {
+      currentUser = delegate.sendUser()
+    }
     // delegation
     urlTextField.delegate = self
     titleTextField.delegate = self
@@ -31,19 +37,21 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     }
 
 
+  /// handles the privacy status of the currentVisit
+  /// if public all users can see the visit else only admin and current user can see it
+  /// - Parameter sender: switch
   @IBAction func setPublic(_ sender: UISwitch) {
     if sender.isOn {
       isPublic = 2
        // show alert to tell it will be visible by all users
        UserAlert.show(title: "Attention", message: "Tous les utilisateurs de Notoryou pourrons accèder à votre visite", controller: self)
     } else {
+      // set to private
       isPublic = 0
-     
-     
     }
-    print(isPublic)
   }
   
+  /// CallBack function for save button that saves the visit in firebase
   @objc func saveVisit() {
     if titleTextField.text != "" && urlTextField.text != "" && previewTextField.text != "" {
       
@@ -51,7 +59,6 @@ class AddViewController: UIViewController, UITextFieldDelegate {
       let formatter = DateFormatter()
       formatter.dateFormat = "yyyy MM dd"
       let saveDate = formatter.string(from: Date())
-      
       
       // save object to firebase
       FirebaseManager.shared.createVisit(user: "mathieu", date: saveDate, title: titleTextField.text!, id: urlTextField.text!, imageUrl: previewTextField.text!, visibility: isPublic)

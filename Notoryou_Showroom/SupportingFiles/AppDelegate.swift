@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,10 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Set initial Controller without storyboard
     window = UIWindow(frame: UIScreen.main.bounds)
-    let homeVc = HomeViewController()
-    let nav = UINavigationController(rootViewController: homeVc)
-    window?.rootViewController = nav
+    let loginVc = LoginViewController()
+    
+    window?.rootViewController = loginVc
     window?.makeKeyAndVisible()
+    // purge cache
+    SDWebImageManager.shared().imageCache?.deleteOldFiles(completionBlock: nil)
+    SDImageCache.shared().clearMemory()
+    SDImageCache.shared().clearDisk()
+    let cacheConfig = SDImageCacheConfig()
+    cacheConfig.shouldDecompressImages = false
+    cacheConfig.shouldCacheImagesInMemory = false
+    URLCache.shared.removeAllCachedResponses()
     return true
   }
 

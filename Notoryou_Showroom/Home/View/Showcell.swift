@@ -28,5 +28,15 @@ class Showcell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+  
+  override func setEditing(_ editing: Bool, animated: Bool) {
+    super.setEditing(editing, animated: animated)
+    
+    if editing {
+      self.editingAccessoryView?.backgroundColor = .black
+  }
+  }
+
+  
     
 }
