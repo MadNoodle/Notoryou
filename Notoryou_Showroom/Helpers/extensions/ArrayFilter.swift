@@ -17,7 +17,6 @@ extension Array {
     forEach { (element) in
       
       let existingElements = results.filter {
-        print("DUPLICATE \(element)")
         return includeElement(element, $0)
       }
       

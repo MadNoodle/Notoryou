@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
         } else {
           if let usr = user {
             // store in user default
-            self.currentUser = usr.email!
+            self.currentUser = usr.user.email!
             
             // present main controller
             let homeVc = HomeViewController()

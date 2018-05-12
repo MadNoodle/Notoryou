@@ -11,16 +11,25 @@ import SDWebImage
 import FirebaseAuth
 import MessageUI
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
+  func sendUser() -> String {
+    return currentUser
+  }
   
-  @IBOutlet weak var tableView: UITableView!
+
+  // MARK: - PROPERTIES
+  
   var shows = [Show]()
   var currentShow: Show?
   var showToExport = [(String,String)]()
   let blackView = UIView()
   let indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
   var currentUser = ""
-  var delegate: UserLoggedDelegate!
+  weak var delegate: UserLoggedDelegate!
+  
+  // MARK: - OUTLETS
+  @IBOutlet weak var tableView: UITableView!
+  // MARK: - LIFECYCLE METHODS
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,6 +41,23 @@ class HomeViewController: UIViewController {
       UserAlert.show(title: "Error", message: "logging error", controller: self)
     }
     shouldSetUpUI()
+//    showLoader()
+//
+//    //Load database for user and public
+//    DispatchQueue.main.async {
+//      FirebaseManager.shared.loadVisits(for: self.currentUser) { (result) in
+//        if result != nil{
+//          self.shows = result!
+//          self.tableView.reloadData()
+//          self.hideLoader()
+//        } else {
+//          UserAlert.show(title: "Sorry", message: "There is no tour available for you", controller: self)
+//        }
+//      }
+//    }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
     showLoader()
     
     //Load database for user and public
@@ -46,10 +72,7 @@ class HomeViewController: UIViewController {
         }
       }
     }
-  }
   
-  override func viewWillAppear(_ animated: Bool) {
-
     tableView.reloadData()
   }
   
@@ -58,26 +81,31 @@ class HomeViewController: UIViewController {
   // CallBack function for navBAr button
   @objc func addShow() {
     let addVc = AddViewController()
+    addVc.delegate = self
     self.navigationController?.pushViewController(addVc, animated: true)
   }
   
   
   
   // Set editing Mode
+  
   @objc func showEditing(sender: UIBarButtonItem)
   {
     if(self.tableView.isEditing == true)
     {
       self.tableView.isEditing = false
-      self.navigationItem.rightBarButtonItems![1].title = "Select"
-      sendMail()
+      self.navigationItem.rightBarButtonItems![1].image = #imageLiteral(resourceName: "share ")
+      if showToExport.count == 0 {
+        UserAlert.show(title: "Attention", message: "Vous n'avez pas sélectionné de visite à partager", controller: self)
+      } else {
+        shouldDisplayChoice()
+      }
+      
     }
     else
     {
       self.tableView.isEditing = true
-      self.navigationItem.rightBarButtonItems![1].title = "Share"
-      
-      
+      self.navigationItem.rightBarButtonItems![1].image = #imageLiteral(resourceName: "send ")
     }
   }
   
@@ -92,7 +120,7 @@ class HomeViewController: UIViewController {
     }
   }
   
-
+  
   // MARK: - UI METHODS
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
@@ -109,8 +137,8 @@ class HomeViewController: UIViewController {
     // Nav Controller setup
     self.navigationController?.navigationBar.isTranslucent = false
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addShow))
-   
-    let rightButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showEditing))
+    
+    let rightButton = UIBarButtonItem(image: #imageLiteral(resourceName: "share "), style: .done, target: self, action: #selector(showEditing))
     self.navigationItem.rightBarButtonItems = [addButton, rightButton]
     
     let logOutButton = UIBarButtonItem(title: "log out", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOut))
@@ -128,6 +156,7 @@ class HomeViewController: UIViewController {
     indicator.frame = self.view.frame
     indicator.startAnimating()
   }
+  
   fileprivate func hideLoader() {
     // hide loader
     UIView.animate(withDuration: 0.5, animations: {
@@ -137,6 +166,19 @@ class HomeViewController: UIViewController {
     self.indicator.removeFromSuperview()
     self.blackView.removeFromSuperview()
   }
+  fileprivate func shouldDisplayChoice() {
+    let sendAction = UIAlertAction(title: "Send email", style: .default) { (action) in
+      self.sendMail()
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+      
+    }
+    let alertController = UIAlertController(title: "Confirm", message: "Do you want to share these links", preferredStyle: .actionSheet)
+    alertController.addAction(sendAction)
+    alertController.addAction(cancelAction)
+    present(alertController, animated:  true)
+  }
+  
 }
 
 
@@ -157,9 +199,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     cell?.showTitle.text = shows[indexPath.row].title
     // load image
     DispatchQueue.main.async {
-      cell?.thumbnail.sd_setImage(with: URL(string:self.shows[indexPath.row].imageName) , placeholderImage: #imageLiteral(resourceName: "logo_nty"), options: [.continueInBackground, .progressiveDownload])
+      self.loadImage(for: self.shows[indexPath.row].imageName, in: cell!, id: self.shows[indexPath.row].key)
     }
-
+    
     
     
     return cell!
@@ -175,16 +217,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
     return .insert
   }
-
-
+  
+  
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     
     if editingStyle == .insert {
       if let currentShowUrl = shows[indexPath.row].url {
         if let currentShowName = shows[indexPath.row].title {
           let export = (currentShowUrl, currentShowName)
-      showToExport.append(export)
-      
+          showToExport.append(export)
+          
         }
       }
     }
@@ -192,8 +234,33 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     cell.backgroundColor = .black
   }
-
-
+  
+  
+  
+  func loadImage(for url: String?, in cell: Showcell, id: String) {
+    SDImageCache.shared().queryCacheOperation(forKey: id, done: { (image, data, type) in
+      if let image = image {
+        cell.thumbnail.image = image
+      } else {
+        if let imgUrl = url {
+          SDWebImageManager.shared().loadImage(with: URL(string: imgUrl), options: [.progressiveDownload, .continueInBackground], progress: nil) { (image, data, error, type, done, url) in
+            let size: CGFloat = 300
+            let image = image?.resize(to: size)
+            cell.thumbnail.image = image
+            
+            SDImageCache.shared().store(image, forKey: id, completion: nil)
+          }
+        } else {
+          cell.thumbnail.image = UIImage(named: "logonb")
+        }
+      }
+    })
+  }
+  
+  func sendVisit() -> Show? {
+    guard let show = currentShow else { return nil }
+    return show
+  }
 }
 
 extension HomeViewController: MFMailComposeViewControllerDelegate {
@@ -239,3 +306,5 @@ extension HomeViewController: MFMailComposeViewControllerDelegate {
     controller.dismiss(animated: true, completion: nil)
   }
 }
+
+

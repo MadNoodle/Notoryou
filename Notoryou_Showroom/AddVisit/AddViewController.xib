@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewController" customModule="Notoryou_Showroom" customModuleProvider="target">
             <connections>
                 <outlet property="previewTextField" destination="peB-B9-n2B" id="uJp-wK-hnM"/>
+                <outlet property="thumbnailView" destination="4Kc-lj-SLn" id="tbM-7n-3OR"/>
                 <outlet property="titleTextField" destination="NJb-cv-pDQ" id="cXs-ZM-NuL"/>
                 <outlet property="urlTextField" destination="SfA-zo-XIV" id="wWi-eD-FWH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -59,7 +60,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tumbnail URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP4-mM-mFE">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thumbnail URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP4-mM-mFE">
                             <rect key="frame" x="0.0" y="166" width="327" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="muO-41-tgM"/>
@@ -113,13 +114,22 @@
                         <constraint firstItem="peB-B9-n2B" firstAttribute="leading" secondItem="oDn-LR-6B5" secondAttribute="leading" id="yzy-5o-C4i"/>
                     </constraints>
                 </stackView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Kc-lj-SLn">
+                    <rect key="frame" x="25" y="332" width="325" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="U8X-N8-U43"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.070033483209999997" green="0.070033483209999997" blue="0.070033483209999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="4Kc-lj-SLn" firstAttribute="top" secondItem="oDn-LR-6B5" secondAttribute="bottom" constant="8" id="97S-2S-eaI"/>
                 <constraint firstItem="oDn-LR-6B5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="DYm-Sd-PWo"/>
+                <constraint firstItem="4Kc-lj-SLn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="X1d-IV-RNH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oDn-LR-6B5" secondAttribute="trailing" constant="24" id="bi6-rW-M5k"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="oDn-LR-6B5" secondAttribute="bottom" constant="474" id="cas-V0-Fxt"/>
                 <constraint firstItem="oDn-LR-6B5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="rVg-Aw-pU7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Kc-lj-SLn" secondAttribute="trailing" constant="25" id="uZu-rF-Dos"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

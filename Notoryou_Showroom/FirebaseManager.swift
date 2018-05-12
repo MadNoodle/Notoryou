@@ -24,7 +24,7 @@ class FirebaseManager {
   /// Create a Visit Entity in the Firebase database
   func createVisit(user: String, date: String, title: String, id: String, imageUrl: String, visibility: Int) {
     // Set new parameters
-    let newVisit = ["user": user, "date": date, "title": title, "id": id, "imageUrl": imageUrl] as [String: Any]
+    let newVisit = ["user": user, "date": date, "title": title, "id": id, "imageUrl": imageUrl, "visibilty": visibility] as [String: Any]
     // update DB
     visitRef.childByAutoId().setValue(newVisit)
   }
@@ -33,12 +33,8 @@ class FirebaseManager {
   func loadVisits(for currentUser: String, completionHandler:@escaping (_ visits: [Show]?)->()) {
     visitRef.observe(.value) { snapshot in
       var visitArray = [Show]()
-      var publicVisits = [Show]()
       var newItems = [Show]()
-      var user: User!
-      // Load the current user
-        
-    
+      
       // load all visitis
       for item in snapshot.children {
         let newVisit = Show(snapshot: (item as? DataSnapshot)!)
@@ -48,7 +44,6 @@ class FirebaseManager {
       // filter public visits
       for item in newItems where item.visibility == 2{
         visitArray.insert(item, at: 0)
-        print("public \(item.title)")
       }
       
       // filter user visits
@@ -57,9 +52,10 @@ class FirebaseManager {
         print("title \(item.title)")
       }
       
+      // filter duplicates
       visitArray = visitArray.filterDuplicates {$0.key == $1.key && $0.key == $1.key}
       
-      print("RESULT: \(visitArray)")
+     // return array
       if visitArray.isEmpty {
         completionHandler(nil)
       }else {
@@ -70,6 +66,7 @@ class FirebaseManager {
   
   /// Updating method for visitis
   func updateVisit(user: String, key: String?, date: String, title: String, id: String, imageUrl: String) {
+    
     // Set new parameters
      let parameters = ["user": user, "date": date, "title": title, "id": id, "imageUrl": imageUrl] as [String: Any]
     
@@ -80,14 +77,25 @@ class FirebaseManager {
   
   /// This function delete a visit from Firebase Database
   func deleteVisit (_ visit: Show) {
-    guard let ref = visit.ref else { return}
-    ref.removeValue()
-  }
+   
+      visitRef.observe(.value) { (snapshot) in
+        for item in snapshot.children {
+          
+          let show = Show(snapshot: (item as? DataSnapshot)!)
+          if show.key == visit.key {
+            self.visitRef.child(visit.key).removeValue()
+          }
+        }
+      }
+    }
+  
   
   /// Create a Visit Entity in the Firebase database
   func createUser(username: String, lastName: String, firstName: String, date: String, password: String, authorization: Int) {
+    
     // Set new parameters
     let newUser = ["username": username, "lastName": lastName, "firstName": firstName, "date": date, "password": password, "authorization": authorization] as [String: Any]
+    
     // update DB
     userRef.childByAutoId().setValue(newUser)
   }
@@ -96,11 +104,13 @@ class FirebaseManager {
   func loadUsers( completionHandler:@escaping (_ users: [User]?)->()) {
     userRef.observe(.value) { snapshot in
       var userArray: [User] = []
+      // load data from firebase
       for item in snapshot.children {
         let newUser = User(snapshot: (item as? DataSnapshot)!)
         userArray.insert(newUser, at: 0)
       }
       
+      // return users
       if userArray.isEmpty {
         completionHandler(nil)
       }else {
