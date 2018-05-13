@@ -10,7 +10,8 @@ import UIKit
 import WebKit
 import FirebaseDatabase
 
-class PlayerViewController: UIViewController{
+class PlayerViewController: UIViewController {
+  var currentShow: Show!
   
   var url = ""
   var showRef: DatabaseReference!
@@ -43,7 +44,9 @@ class PlayerViewController: UIViewController{
   
   /// Callback function to edit the current visit
   @objc func editVisit() {
-    print("edit Visit")
+   let editVc = EditViewController()
+   editVc.currentShow = currentShow
+    self.navigationController?.pushViewController(editVc, animated: true)
   }
   
   /// Callback function to delete the current visit
@@ -53,11 +56,7 @@ class PlayerViewController: UIViewController{
     
     let deleteAction = UIAlertAction(title: "Supprimer", style: .default) { (_) in
       print("delete")
-//      if self.delegate != nil {
-//        guard let show = self.delegate?.currentShow else { return}
-//        FirebaseManager.shared.deleteVisit(show)
-//      }
-//
+
       // Send user back to collection
       let homeVc = HomeViewController()
       self.navigationController?.pushViewController(homeVc, animated: true)

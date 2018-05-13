@@ -194,6 +194,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     let playerVc = PlayerViewController()
     playerVc.url = currentShow.url
     playerVc.showRef = currentShow.ref
+    playerVc.currentShow = currentShow
     self.navigationController?.pushViewController(playerVc, animated: true)
   }
   

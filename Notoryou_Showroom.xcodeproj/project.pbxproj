@@ -32,6 +32,8 @@
 		B9D1CF2520A2206A00B3F8B3 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D1CF2320A2206A00B3F8B3 /* PlayerViewController.xib */; };
 		B9D1CF2720A2434400B3F8B3 /* notoryou.js in Resources */ = {isa = PBXBuildFile; fileRef = B9D1CF2620A2434400B3F8B3 /* notoryou.js */; };
 		B9FD6B9220A8D18900523D81 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD6B9120A8D18900523D81 /* CustomTextField.swift */; };
+		B9FD6B9820A8E2FA00523D81 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD6B9620A8E2FA00523D81 /* EditViewController.swift */; };
+		B9FD6B9920A8E2FA00523D81 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9FD6B9720A8E2FA00523D81 /* EditViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		B9D1CF2320A2206A00B3F8B3 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		B9D1CF2620A2434400B3F8B3 /* notoryou.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = notoryou.js; sourceTree = "<group>"; };
 		B9FD6B9120A8D18900523D81 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B9FD6B9620A8E2FA00523D81 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		B9FD6B9720A8E2FA00523D81 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 		B969BBA720A4CF6000227EA7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B9FD6B9320A8E2C500523D81 /* Services */,
 				B95B8E7F20A75E3200B6287A /* UIClasses */,
 				B95B8E7E20A75E2900B6287A /* extensions */,
 				B95B8E7D20A75E2200B6287A /* classes */,
@@ -173,12 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				B98AAFA920A5C66500F4F250 /* Notoryou_Showroom.entitlements */,
-				B969BBAC20A57E0100227EA7 /* Login */,
-				B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */,
+				B9FD6B9420A8E2D700523D81 /* Controllers */,
 				B969BBA720A4CF6000227EA7 /* Helpers */,
-				B95B0F6E20A2E23800159A2B /* AddVisit */,
-				B9D1CF0B20A2029400B3F8B3 /* Home */,
-				B9D1CF2B20A2D3B600B3F8B3 /* Player */,
 				B9D1CF0620A2026C00B3F8B3 /* SupportingFiles */,
 				B9D1CF0020A2020200B3F8B3 /* Info.plist */,
 			);
@@ -259,6 +260,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B9FD6B9320A8E2C500523D81 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B9FD6B9420A8E2D700523D81 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B969BBAC20A57E0100227EA7 /* Login */,
+				B95B0F6E20A2E23800159A2B /* AddVisit */,
+				B9FD6B9520A8E2E200523D81 /* EditVisit */,
+				B9D1CF0B20A2029400B3F8B3 /* Home */,
+				B9D1CF2B20A2D3B600B3F8B3 /* Player */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B9FD6B9520A8E2E200523D81 /* EditVisit */ = {
+			isa = PBXGroup;
+			children = (
+				B9FD6B9620A8E2FA00523D81 /* EditViewController.swift */,
+				B9FD6B9720A8E2FA00523D81 /* EditViewController.xib */,
+			);
+			path = EditVisit;
+			sourceTree = "<group>";
+		};
 		FFD230B62D1A46407AD13454 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +365,7 @@
 			files = (
 				B9D1CEFF20A2020200B3F8B3 /* LaunchScreen.storyboard in Resources */,
 				B9D1CF2720A2434400B3F8B3 /* notoryou.js in Resources */,
+				B9FD6B9920A8E2FA00523D81 /* EditViewController.xib in Resources */,
 				B9D1CF2520A2206A00B3F8B3 /* PlayerViewController.xib in Resources */,
 				B9D1CEFC20A2020200B3F8B3 /* Assets.xcassets in Resources */,
 				B9D1CF2120A21FA500B3F8B3 /* Showcell.xib in Resources */,
@@ -426,6 +457,7 @@
 				B969BBA420A487D100227EA7 /* User.swift in Sources */,
 				B9D1CF2020A21FA500B3F8B3 /* Showcell.swift in Sources */,
 				B969BBA620A4C5C800227EA7 /* ArrayFilter.swift in Sources */,
+				B9FD6B9820A8E2FA00523D81 /* EditViewController.swift in Sources */,
 				B98AAFAD20A635C100F4F250 /* userLoggedDelegate.swift in Sources */,
 				B9D1CEF520A201FF00B3F8B3 /* AppDelegate.swift in Sources */,
 				B9D1CF2420A2206A00B3F8B3 /* PlayerViewController.swift in Sources */,

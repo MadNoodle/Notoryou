@@ -127,7 +127,6 @@
                 <constraint firstItem="oDn-LR-6B5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="DYm-Sd-PWo"/>
                 <constraint firstItem="4Kc-lj-SLn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="X1d-IV-RNH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oDn-LR-6B5" secondAttribute="trailing" constant="24" id="bi6-rW-M5k"/>
-                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="oDn-LR-6B5" secondAttribute="bottom" constant="474" id="cas-V0-Fxt"/>
                 <constraint firstItem="oDn-LR-6B5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="rVg-Aw-pU7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Kc-lj-SLn" secondAttribute="trailing" constant="25" id="uZu-rF-Dos"/>
             </constraints>
