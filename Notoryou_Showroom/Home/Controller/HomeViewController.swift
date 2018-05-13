@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
   let blackView = UIView()
   let indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
   var currentUser = ""
-  weak var delegate: UserLoggedDelegate!
+ 
   
   // MARK: - OUTLETS
   @IBOutlet weak var tableView: UITableView!
@@ -34,27 +34,13 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Tours"
-    // grab current logged user
-    if delegate != nil {
-      currentUser = delegate.sendUser()
-    } else {
-      UserAlert.show(title: "Error", message: "logging error", controller: self)
+
+    // load current user
+    if let user = UserDefaults.standard.object(forKey: "currentUser") as? String {
+      currentUser = user
     }
     shouldSetUpUI()
-//    showLoader()
-//
-//    //Load database for user and public
-//    DispatchQueue.main.async {
-//      FirebaseManager.shared.loadVisits(for: self.currentUser) { (result) in
-//        if result != nil{
-//          self.shows = result!
-//          self.tableView.reloadData()
-//          self.hideLoader()
-//        } else {
-//          UserAlert.show(title: "Sorry", message: "There is no tour available for you", controller: self)
-//        }
-//      }
-//    }
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -81,7 +67,6 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
   // CallBack function for navBAr button
   @objc func addShow() {
     let addVc = AddViewController()
-    addVc.delegate = self
     self.navigationController?.pushViewController(addVc, animated: true)
   }
   
@@ -156,7 +141,7 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
     indicator.frame = self.view.frame
     indicator.startAnimating()
   }
-  
+
   fileprivate func hideLoader() {
     // hide loader
     UIView.animate(withDuration: 0.5, animations: {
@@ -166,6 +151,7 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
     self.indicator.removeFromSuperview()
     self.blackView.removeFromSuperview()
   }
+  
   fileprivate func shouldDisplayChoice() {
     let sendAction = UIAlertAction(title: "Send email", style: .default) { (action) in
       self.sendMail()
@@ -198,12 +184,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // load title
     cell?.showTitle.text = shows[indexPath.row].title
     // load image
-    DispatchQueue.main.async {
-      self.loadImage(for: self.shows[indexPath.row].imageName, in: cell!, id: self.shows[indexPath.row].key)
-    }
-    
-    
-    
+    cell?.thumbnail.sd_setImage(with: URL(string: shows[indexPath.row].imageName), placeholderImage: #imageLiteral(resourceName: "logonb"), options: [.progressiveDownload, .continueInBackground], completed: nil)
+ 
     return cell!
   }
   
@@ -211,6 +193,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     let currentShow = shows[indexPath.row] 
     let playerVc = PlayerViewController()
     playerVc.url = currentShow.url
+    playerVc.showRef = currentShow.ref
     self.navigationController?.pushViewController(playerVc, animated: true)
   }
   
@@ -235,27 +218,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     cell.backgroundColor = .black
   }
   
-  
-  
-  func loadImage(for url: String?, in cell: Showcell, id: String) {
-    SDImageCache.shared().queryCacheOperation(forKey: id, done: { (image, data, type) in
-      if let image = image {
-        cell.thumbnail.image = image
-      } else {
-        if let imgUrl = url {
-          SDWebImageManager.shared().loadImage(with: URL(string: imgUrl), options: [.progressiveDownload, .continueInBackground], progress: nil) { (image, data, error, type, done, url) in
-            let size: CGFloat = 300
-            let image = image?.resize(to: size)
-            cell.thumbnail.image = image
-            
-            SDImageCache.shared().store(image, forKey: id, completion: nil)
-          }
-        } else {
-          cell.thumbnail.image = UIImage(named: "logonb")
-        }
-      }
-    })
-  }
   
   func sendVisit() -> Show? {
     guard let show = currentShow else { return nil }

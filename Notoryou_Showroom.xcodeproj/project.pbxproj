@@ -31,6 +31,7 @@
 		B9D1CF2420A2206A00B3F8B3 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1CF2220A2206A00B3F8B3 /* PlayerViewController.swift */; };
 		B9D1CF2520A2206A00B3F8B3 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D1CF2320A2206A00B3F8B3 /* PlayerViewController.xib */; };
 		B9D1CF2720A2434400B3F8B3 /* notoryou.js in Resources */ = {isa = PBXBuildFile; fileRef = B9D1CF2620A2434400B3F8B3 /* notoryou.js */; };
+		B9FD6B9220A8D18900523D81 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD6B9120A8D18900523D81 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		B9D1CF2220A2206A00B3F8B3 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		B9D1CF2320A2206A00B3F8B3 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		B9D1CF2620A2434400B3F8B3 /* notoryou.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = notoryou.js; sourceTree = "<group>"; };
+		B9FD6B9120A8D18900523D81 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		B95B8E7F20A75E3200B6287A /* UIClasses */ = {
 			isa = PBXGroup;
 			children = (
+				B9FD6B9120A8D18900523D81 /* CustomTextField.swift */,
 			);
 			path = UIClasses;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				B95B8E8120A75E4F00B6287A /* VisitDelegate.swift in Sources */,
 				B969BBA920A4E21200227EA7 /* UserAlert.swift in Sources */,
 				B969BBAF20A57E1200227EA7 /* LoginViewController.swift in Sources */,
+				B9FD6B9220A8D18900523D81 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

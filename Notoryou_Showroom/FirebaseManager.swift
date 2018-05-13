@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class FirebaseManager {
   /// Entry point for singleton
@@ -132,5 +133,62 @@ class FirebaseManager {
   func deleteUser (_ user: User) {
     guard let ref = user.ref else { return}
     ref.removeValue()
+  }
+  
+  let storageRef = Storage.storage().reference()
+  
+  func uploadImagePic(data: Data, completionhandler: @escaping (_ imageUrl: String) -> Void) {
+    var imageUrl = ""
+    // Create the file metadata
+    let metadata = StorageMetadata()
+    metadata.contentType = "image/png"
+    
+    let uuid = UUID().uuidString
+    // Upload file and metadata to the object 'images/mountains.jpg'
+    let uploadTask = storageRef.child(uuid).putData(data, metadata: metadata) {(_, error) in
+      if error != nil {
+        print(error!.localizedDescription)
+      }
+      self.storageRef.child(uuid).downloadURL(completion: { (url, error) in
+        if error == nil {
+          if let downloadUrl = url {
+            // Make you download string
+            imageUrl = downloadUrl.absoluteString
+            
+          }
+        } else {
+          // Do something if error
+        }
+      completionhandler(imageUrl)})
+    }
+    
+    uploadTask.observe(.progress) { snapshot in
+      // Upload reported progress
+      let percentComplete = 1000.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+      print(percentComplete)
+    }
+    
+    uploadTask.observe(.failure) { snapshot in
+      if let error = snapshot.error as NSError? {
+        switch StorageErrorCode(rawValue: error.code)! {
+        case .objectNotFound:
+          
+          print("File doesn't exist")
+          
+        case .unauthorized:
+          print("User doesn't have permission to access file")
+          
+        case .cancelled:
+          print("User canceled the upload")
+          
+        case .unknown:
+          // Unknown error occurred, inspect the server response
+          break
+        default:
+          // A separate error occurred. This is a good place to retry the upload.
+          break
+        }
+      }
+    }
   }
 }

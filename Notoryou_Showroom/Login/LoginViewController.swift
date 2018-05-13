@@ -35,14 +35,10 @@ class LoginViewController: UIViewController {
           UserAlert.show(title: "Sorry", message: "This user is not allowed to access", controller: self)
         } else {
           if let usr = user {
+      
             // store in user default
-            self.currentUser = usr.user.email!
-            
-            // present main controller
+            UserDefaults.standard.set(usr.user.email!, forKey: "currentUser")
             let homeVc = HomeViewController()
-            homeVc.delegate = self
-            let addVc = AddViewController()
-            addVc.delegate = self
             let nav = UINavigationController(rootViewController: homeVc)
             self.present(nav, animated: true)
           }
@@ -76,8 +72,18 @@ extension LoginViewController: UserLoggedDelegate {
   
   
 }
+
 extension LoginViewController: UITextFieldDelegate {
   
+  ///  When user touches outside of the text field. it validates his text
+  /// and send translation request. the keyboard disappear.
+  ///
+  /// - Parameters:
+  ///   - touches: Touch
+  ///   - event: event that trigger the action
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
+  }
   /// When user presses enter on keyboard. it validates his text
   /// and send translation request. the keyboard disappear.
   ///

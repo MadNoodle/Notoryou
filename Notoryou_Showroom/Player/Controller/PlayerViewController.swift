@@ -11,20 +11,15 @@ import WebKit
 import FirebaseDatabase
 
 class PlayerViewController: UIViewController{
-  weak var delegate: VisitDelegate!
-  var show: Show?
+  
   var url = ""
+  var showRef: DatabaseReference!
   
   @IBOutlet weak var wkView: WKWebView!
   
   override func viewDidLoad() {
         super.viewDidLoad()
-    // load show
-    if delegate != nil {
-      guard let show = delegate.sendVisit() else { return }
-      // load url to display
-      url = show.url
-    }
+
     
     // Customize Navigation bar
     self.navigationController?.navigationBar.isTranslucent = false
@@ -58,17 +53,18 @@ class PlayerViewController: UIViewController{
     
     let deleteAction = UIAlertAction(title: "Supprimer", style: .default) { (_) in
       print("delete")
-      if self.delegate != nil {
-        guard let show = self.delegate?.currentShow else { return}
-        FirebaseManager.shared.deleteVisit(show)
-      }
-      
+//      if self.delegate != nil {
+//        guard let show = self.delegate?.currentShow else { return}
+//        FirebaseManager.shared.deleteVisit(show)
+//      }
+//
       // Send user back to collection
       let homeVc = HomeViewController()
       self.navigationController?.pushViewController(homeVc, animated: true)
       
       // delete
-      
+    
+      self.showRef.removeValue()
       
       
     }
