@@ -12,9 +12,10 @@ import UIKit
 extension UIImage {
   
   func resize(to newWidth: CGFloat) -> UIImage {
-    
+    // define new scale
     let scale = newWidth / self.size.width
     let newHeight = self.size.height * scale
+    // capture image and create an image with desired size
     UIGraphicsBeginImageContext(CGSize(width: newWidth,height: newHeight))
     self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
     let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -24,6 +25,7 @@ extension UIImage {
   }
 }
 
+// Initialize image cache storage
 let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {

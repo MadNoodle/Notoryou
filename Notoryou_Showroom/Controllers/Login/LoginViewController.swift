@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Crashlytics
 
 class LoginViewController: UIViewController {
   
@@ -29,6 +30,8 @@ class LoginViewController: UIViewController {
   
   
   @IBAction func signIn(_ sender: UIButton) {
+   // test crashlytics
+    // Crashlytics.sharedInstance().crash()
     if usernameField.text != "" && passwordField.text != "" {
       Auth.auth().signIn(withEmail: usernameField.text!, password: passwordField.text!) { (user, error) in
         if error != nil {

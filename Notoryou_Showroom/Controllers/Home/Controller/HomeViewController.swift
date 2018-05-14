@@ -26,6 +26,15 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
   let indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
   var currentUser = ""
  
+  lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action:
+      #selector(handleRefresh),
+                             for: UIControlEvents.valueChanged)
+    refreshControl.tintColor = .white
+    
+    return refreshControl
+  }()
   
   // MARK: - OUTLETS
   @IBOutlet weak var tableView: UITableView!
@@ -105,7 +114,22 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
     }
   }
   
-  
+  @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+    //Load database for user and public
+    DispatchQueue.main.async {
+      FirebaseManager.shared.loadVisits(for: self.currentUser) { (result) in
+        if result != nil{
+          self.shows = result!
+          self.tableView.reloadData()
+          self.hideLoader()
+        } else {
+          UserAlert.show(title: "Sorry", message: "There is no tour available for you", controller: self)
+        }
+      }
+    }
+    self.tableView.reloadData()
+    refreshControl.endRefreshing()
+  }
   // MARK: - UI METHODS
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
@@ -118,7 +142,7 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.allowsSelectionDuringEditing = false
-    
+    self.tableView.addSubview(self.refreshControl)
     // Nav Controller setup
     self.navigationController?.navigationBar.isTranslucent = false
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addShow))
