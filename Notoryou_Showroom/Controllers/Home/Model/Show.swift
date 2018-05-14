@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import UIKit
 
 struct Show {
   var title: String!
@@ -18,6 +19,7 @@ struct Show {
   var visibility: Int!
   var ref: DatabaseReference!
   var key: String!
+  var image: UIImage!
   
   // Init Show from values
   init(title: String, user:String, url: String, imageName: String, visibility: Int){
@@ -28,6 +30,7 @@ struct Show {
     self.user = user
     self.visibility = visibility
     self.key = ""
+    self.image = UIImage()
   }
   
   // Init Show from Firebase Snapshot values
@@ -43,6 +46,7 @@ struct Show {
     self.imageName = dict["imageUrl"] as? String
     self.visibility = dict["visibility"] as? Int
     self.key = snapshot.key
+    self.image = UIImage()
   }
 
 }

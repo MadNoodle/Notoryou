@@ -37,13 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = loginVc
     window?.makeKeyAndVisible()
     // purge cache
-//    SDWebImageManager.shared().imageCache?.deleteOldFiles(completionBlock: nil)
-//    SDImageCache.shared().clearMemory()
-//    SDImageCache.shared().clearDisk()
-//    let cacheConfig = SDImageCacheConfig()
-//    cacheConfig.shouldDecompressImages = false
-//    cacheConfig.shouldCacheImagesInMemory = false
-//    URLCache.shared.removeAllCachedResponses()
+    SDWebImageManager.shared().imageCache?.deleteOldFiles(completionBlock: nil)
+    SDImageCache.shared().clearMemory()
+    SDImageCache.shared().clearDisk()
+    let cacheConfig = SDImageCacheConfig()
+    cacheConfig.shouldDecompressImages = false
+    cacheConfig.shouldCacheImagesInMemory = false
+    URLCache.shared.removeAllCachedResponses()
     return true
   }
 

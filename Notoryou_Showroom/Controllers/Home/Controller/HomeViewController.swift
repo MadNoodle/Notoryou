@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+
 import FirebaseAuth
 import MessageUI
 
@@ -184,8 +184,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // load title
     cell?.showTitle.text = shows[indexPath.row].title
     // load image
-    cell?.thumbnail.sd_setImage(with: URL(string: shows[indexPath.row].imageName), placeholderImage: #imageLiteral(resourceName: "logonb"), options: [.progressiveDownload, .continueInBackground], completed: nil)
- 
+      cell?.thumbnail.load(urlString: shows[indexPath.row].imageName)
     return cell!
   }
   
