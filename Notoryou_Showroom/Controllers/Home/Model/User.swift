@@ -39,6 +39,7 @@ struct User {
     self.lastName = dict["lastName"] as? String
     self.firstName = dict["firstName"] as? String
     self.password = dict["password"] as? String
+    self.email = dict["email"] as? String
     self.authorization = dict["authorization"] as? Int
   self.key = snapshot.key
   }

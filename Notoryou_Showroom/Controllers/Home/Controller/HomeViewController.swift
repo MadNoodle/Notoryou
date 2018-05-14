@@ -151,7 +151,13 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate {
     self.navigationItem.rightBarButtonItems = [addButton, rightButton]
     
     let logOutButton = UIBarButtonItem(title: "log out", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOut))
-    self.navigationItem.leftBarButtonItem = logOutButton
+    let userButton = UIBarButtonItem(title: "users", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showUsers))
+    self.navigationItem.leftBarButtonItems = [logOutButton, userButton]
+  }
+  
+  @objc func showUsers() {
+    let userVc = UserManagerViewController()
+    self.navigationController?.pushViewController(userVc, animated: true)
   }
   
   fileprivate func showLoader() {

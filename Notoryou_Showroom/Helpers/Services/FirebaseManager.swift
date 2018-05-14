@@ -20,7 +20,7 @@ class FirebaseManager {
   /// Database reference for tours
   let visitRef: DatabaseReference = Database.database().reference().child("tours")
   /// Dabatabse user reference
-  let userRef: DatabaseReference = Database.database().reference().child("users")
+  let userRef: DatabaseReference = Database.database().reference().child("user")
   
   /// Create a Visit Entity in the Firebase database
   func createVisit(user: String, date: String, title: String, id: String, imageUrl: String, visibility: Int) {

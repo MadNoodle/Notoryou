@@ -34,6 +34,8 @@
 		B9FD6B9220A8D18900523D81 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD6B9120A8D18900523D81 /* CustomTextField.swift */; };
 		B9FD6B9820A8E2FA00523D81 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD6B9620A8E2FA00523D81 /* EditViewController.swift */; };
 		B9FD6B9920A8E2FA00523D81 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9FD6B9720A8E2FA00523D81 /* EditViewController.xib */; };
+		B9FD6B9D20AA19DD00523D81 /* UserManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD6B9B20AA19DD00523D81 /* UserManagerViewController.swift */; };
+		B9FD6B9E20AA19DD00523D81 /* UserManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9FD6B9C20AA19DD00523D81 /* UserManagerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		B9FD6B9120A8D18900523D81 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B9FD6B9620A8E2FA00523D81 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		B9FD6B9720A8E2FA00523D81 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		B9FD6B9B20AA19DD00523D81 /* UserManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerViewController.swift; sourceTree = "<group>"; };
+		B9FD6B9C20AA19DD00523D81 /* UserManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserManagerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +280,8 @@
 				B9FD6B9520A8E2E200523D81 /* EditVisit */,
 				B9D1CF0B20A2029400B3F8B3 /* Home */,
 				B9D1CF2B20A2D3B600B3F8B3 /* Player */,
+				B9FD6B9B20AA19DD00523D81 /* UserManagerViewController.swift */,
+				B9FD6B9C20AA19DD00523D81 /* UserManagerViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				B9D1CEFC20A2020200B3F8B3 /* Assets.xcassets in Resources */,
 				B9D1CF2120A21FA500B3F8B3 /* Showcell.xib in Resources */,
 				B95B0F7220A2E25200159A2B /* AddViewController.xib in Resources */,
+				B9FD6B9E20AA19DD00523D81 /* UserManagerViewController.xib in Resources */,
 				B9D1CF1D20A21ABD00B3F8B3 /* HomeViewController.xib in Resources */,
 				B96C83CC20A352A40022D1F9 /* GoogleService-Info.plist in Resources */,
 				B969BBB020A57E1200227EA7 /* LoginViewController.xib in Resources */,
@@ -479,6 +486,7 @@
 				B969BBA920A4E21200227EA7 /* UserAlert.swift in Sources */,
 				B969BBAF20A57E1200227EA7 /* LoginViewController.swift in Sources */,
 				B9FD6B9220A8D18900523D81 /* CustomTextField.swift in Sources */,
+				B9FD6B9D20AA19DD00523D81 /* UserManagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
