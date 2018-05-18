@@ -8,18 +8,16 @@
 
 import UIKit
 
+/// Custom TextField for registration
 class CustomTextField: UITextField {
 
-
     override func draw(_ rect: CGRect) {
+      // Customize appearance
       self.backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
       self.layer.borderColor = UIColor.white.cgColor
       self.layer.cornerRadius = 5.0
       self.layer.masksToBounds = true
       self.layer.borderWidth = 1.0
       self.textColor = .white
-        // Drawing code
     }
-  
-
 }

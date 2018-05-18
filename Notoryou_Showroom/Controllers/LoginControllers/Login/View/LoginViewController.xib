@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Notoryou_Showroom" customModuleProvider="target">
+            <connections>
+                <outlet property="passwordField" destination="Ylc-qt-fqU" id="Lwt-cF-M8h"/>
+                <outlet property="singInButton" destination="Voc-Cg-jrY" id="mta-j3-iTB"/>
+                <outlet property="usernameField" destination="8Tm-jP-Dxm" id="Unq-Ir-uzh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logonb" translatesAutoresizingMaskIntoConstraints="NO" id="9vK-oR-1cX">
+                    <rect key="frame" x="112.5" y="70" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Y9J-pF-1F8"/>
+                        <constraint firstAttribute="width" constant="150" id="pql-h3-bm8"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mv6-n5-gGy">
+                    <rect key="frame" x="50" y="235" width="275" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afj-eg-dCE">
+                            <rect key="frame" x="0.0" y="0.0" width="73.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Tm-jP-Dxm" customClass="CustomTextField" customModule="Notoryou_Showroom" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="27.5" width="275" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="WRv-lc-MY3"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPv-5x-pUC">
+                            <rect key="frame" x="0.0" y="86.5" width="69.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ylc-qt-fqU" customClass="CustomTextField" customModule="Notoryou_Showroom" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="114" width="275" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="81f-ca-LQz"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMz-Ns-b4N">
+                            <rect key="frame" x="0.0" y="173" width="275" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Forgot password?">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="handleForgottenPasswords:" destination="-1" eventType="touchUpInside" id="qYe-rJ-0bI"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Ylc-qt-fqU" secondAttribute="trailing" id="4Mr-d0-XwT"/>
+                        <constraint firstAttribute="height" constant="200" id="IeA-j7-JVJ"/>
+                        <constraint firstItem="Ylc-qt-fqU" firstAttribute="leading" secondItem="mv6-n5-gGy" secondAttribute="leading" id="URn-ck-EId"/>
+                        <constraint firstItem="8Tm-jP-Dxm" firstAttribute="leading" secondItem="mv6-n5-gGy" secondAttribute="leading" id="V0r-kk-Xee"/>
+                        <constraint firstItem="ZMz-Ns-b4N" firstAttribute="leading" secondItem="mv6-n5-gGy" secondAttribute="leading" id="X3L-N6-esU"/>
+                        <constraint firstAttribute="trailing" secondItem="ZMz-Ns-b4N" secondAttribute="trailing" id="kex-YH-mUh"/>
+                        <constraint firstAttribute="trailing" secondItem="8Tm-jP-Dxm" secondAttribute="trailing" id="zRJ-nG-xIt"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Voc-Cg-jrY">
+                    <rect key="frame" x="50" y="567" width="275" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="fQa-Fg-kJ3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <state key="normal" title="Sign In">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="signIn:" destination="-1" eventType="touchUpInside" id="K5o-N4-1vJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.070588235294117646" green="0.070033483209999997" blue="0.070033483209999997" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Voc-Cg-jrY" secondAttribute="trailing" constant="50" id="1my-0e-IYh"/>
+                <constraint firstItem="mv6-n5-gGy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="2u4-3T-0JB"/>
+                <constraint firstItem="Voc-Cg-jrY" firstAttribute="top" relation="lessThanOrEqual" secondItem="mv6-n5-gGy" secondAttribute="bottom" constant="132" id="4fr-py-inq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mv6-n5-gGy" secondAttribute="trailing" constant="50" id="FZZ-GR-fvd"/>
+                <constraint firstItem="9vK-oR-1cX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QIH-ui-74c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Voc-Cg-jrY" secondAttribute="bottom" constant="50" id="QWj-ys-oZ6"/>
+                <constraint firstItem="mv6-n5-gGy" firstAttribute="top" secondItem="9vK-oR-1cX" secondAttribute="bottom" constant="15" id="Yq6-ff-OsJ"/>
+                <constraint firstItem="Voc-Cg-jrY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="fVN-li-edB"/>
+                <constraint firstItem="9vK-oR-1cX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="x0f-2v-OUZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logonb" width="960" height="720"/>
+    </resources>
+</document>

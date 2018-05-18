@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddUserViewController" customModule="Notoryou_Showroom" customModuleProvider="target">
+            <connections>
+                <outlet property="emailField" destination="5w8-Wl-jpw" id="jL6-bG-Lq6"/>
+                <outlet property="firstNameField" destination="m9O-8b-WbK" id="0Eg-n7-dVn"/>
+                <outlet property="lastNameField" destination="yHj-eh-Yah" id="Xim-AV-Mxy"/>
+                <outlet property="passwordField" destination="fOe-Zs-RvH" id="F89-Pz-5zM"/>
+                <outlet property="picker" destination="dmX-vN-TY1" id="ZRY-04-tEo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qom-6c-fqx">
+                    <rect key="frame" x="24" y="44" width="327" height="424.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1L-3g-fEt">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHj-eh-Yah" customClass="CustomTextField" customModule="Notoryou_Showroom" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="28.5" width="327" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="E4A-iJ-xNP"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firstname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rff-sH-hf2">
+                            <rect key="frame" x="0.0" y="86.5" width="76" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m9O-8b-WbK" customClass="CustomTextField" customModule="Notoryou_Showroom" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="115" width="327" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="a6e-37-chN"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSF-SD-WWn">
+                            <rect key="frame" x="0.0" y="173" width="48.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5w8-Wl-jpw" customClass="CustomTextField" customModule="Notoryou_Showroom" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="201.5" width="327" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="smG-sz-bKG"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHm-VX-nwu">
+                            <rect key="frame" x="0.0" y="259.5" width="74" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOe-Zs-RvH" customClass="CustomTextField" customModule="Notoryou_Showroom" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="288" width="327" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="17N-qr-a5d"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asK-Ld-AYN">
+                            <rect key="frame" x="0.0" y="346" width="99.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmX-vN-TY1">
+                            <rect key="frame" x="0.0" y="374.5" width="327" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="YL4-xh-XbU"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </pickerView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="yHj-eh-Yah" firstAttribute="leading" secondItem="Qom-6c-fqx" secondAttribute="leading" id="8eB-8Z-ClA"/>
+                        <constraint firstItem="fOe-Zs-RvH" firstAttribute="leading" secondItem="Qom-6c-fqx" secondAttribute="leading" id="GAy-fR-ZUO"/>
+                        <constraint firstItem="m9O-8b-WbK" firstAttribute="leading" secondItem="Qom-6c-fqx" secondAttribute="leading" id="MZx-1d-god"/>
+                        <constraint firstAttribute="trailing" secondItem="dmX-vN-TY1" secondAttribute="trailing" id="Mj1-fn-haB"/>
+                        <constraint firstAttribute="trailing" secondItem="fOe-Zs-RvH" secondAttribute="trailing" id="O00-gz-ZVw"/>
+                        <constraint firstAttribute="trailing" secondItem="m9O-8b-WbK" secondAttribute="trailing" id="WWx-eS-0ke"/>
+                        <constraint firstAttribute="trailing" secondItem="yHj-eh-Yah" secondAttribute="trailing" id="Wyi-CW-gIB"/>
+                        <constraint firstItem="5w8-Wl-jpw" firstAttribute="leading" secondItem="Qom-6c-fqx" secondAttribute="leading" id="i2x-Lo-wTm"/>
+                        <constraint firstAttribute="trailing" secondItem="5w8-Wl-jpw" secondAttribute="trailing" id="kfg-Dt-Fm7"/>
+                        <constraint firstItem="dmX-vN-TY1" firstAttribute="leading" secondItem="Qom-6c-fqx" secondAttribute="leading" id="wB8-ib-TKg"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.070033483209999997" green="0.070033483209999997" blue="0.070033483209999997" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Qom-6c-fqx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="5gP-uk-bFh"/>
+                <constraint firstAttribute="trailing" secondItem="Qom-6c-fqx" secondAttribute="trailing" constant="24" id="WCg-ct-dTv"/>
+                <constraint firstItem="Qom-6c-fqx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="jLp-hh-BRo"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

@@ -11,6 +11,10 @@ import UIKit
 
 extension UIImage {
   
+  /// Resize an image to a size in px and preserve aspectRatio
+  ///
+  /// - Parameter newWidth: CGFLOAT width
+  /// - Returns: UIImage resized Image
   func resize(to newWidth: CGFloat) -> UIImage {
     // define new scale
     let scale = newWidth / self.size.width
@@ -25,27 +29,41 @@ extension UIImage {
   }
 }
 
-// Initialize image cache storage
+/// Initialize the cache storage for images
 let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
+  
+  /// Load and cache an image with the image url as string
+  ///
+  /// - Parameter urlString: String
   func load(urlString: String) {
+    // Convert string to url
     let url = URL(string: urlString)
     image = nil
     
+    // check and load image from cache
     if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
       self.image = imageFromCache
       return
     }
-
+    
+    // Fetch image from remote
     let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-      if error != nil {
-        print(error!.localizedDescription)
-      }
+      // send to bg queue
       DispatchQueue.main.async {
-        guard let imageToCache = UIImage(data: data!) else { return}
-        imageCache.setObject(imageToCache, forKey: urlString as AnyObject)
-        self.image = imageToCache
+        // unwrap image as data
+        if let data = data {
+          // Store in cache
+          if let imageToCache = UIImage(data: data) {
+            imageCache.setObject(imageToCache, forKey: urlString as AnyObject)
+            self.image = imageToCache
+          }
+        } else if let error = error  {
+          print("USER INFO ERROR: \(error.localizedDescription)")
+          // placeholder Image
+          self.image = #imageLiteral(resourceName: "logonb")
+        }
       }
     }
     task.resume()

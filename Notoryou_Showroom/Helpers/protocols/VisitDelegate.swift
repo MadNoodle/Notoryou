@@ -8,7 +8,12 @@
 
 import Foundation
 
+/// Protocol to pass visit between controllers
 protocol VisitDelegate: class {
+  /// currently displayed visit
   var currentShow: Show? {get set}
+  /// Method to pass visit between controllers
+  ///
+  /// - Returns: Show?
   func sendVisit() -> Show?
 }

@@ -12,6 +12,14 @@
 		B95B0F7220A2E25200159A2B /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95B0F7020A2E25200159A2B /* AddViewController.xib */; };
 		B95B8E8120A75E4F00B6287A /* VisitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B8E8020A75E4F00B6287A /* VisitDelegate.swift */; };
 		B95B8E8320A75F0200B6287A /* UIImage+cache+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B8E8220A75F0200B6287A /* UIImage+cache+resize.swift */; };
+		B95D683C20AD8A920018F4FE /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D683B20AD8A920018F4FE /* Container.swift */; };
+		B95D684520AD98D60018F4FE /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D684320AD98D60018F4FE /* MenuCell.swift */; };
+		B95D684620AD98D60018F4FE /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D684420AD98D60018F4FE /* MenuCell.xib */; };
+		B95D684D20ADB0E30018F4FE /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D684B20ADB0E30018F4FE /* Menu.swift */; };
+		B95D684E20ADB0E30018F4FE /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D684C20ADB0E30018F4FE /* Menu.xib */; };
+		B95D685220ADDB8E0018F4FE /* MyToursController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D685020ADDB8E0018F4FE /* MyToursController.swift */; };
+		B95D685320ADDB8E0018F4FE /* MyToursController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D685120ADDB8E0018F4FE /* MyToursController.xib */; };
+		B95D685520AE15540018F4FE /* ValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D685420AE15540018F4FE /* ValidEmail.swift */; };
 		B969BBA420A487D100227EA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969BBA320A487D100227EA7 /* User.swift */; };
 		B969BBA620A4C5C800227EA7 /* ArrayFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969BBA520A4C5C800227EA7 /* ArrayFilter.swift */; };
 		B969BBA920A4E21200227EA7 /* UserAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969BBA820A4E21200227EA7 /* UserAlert.swift */; };
@@ -20,6 +28,14 @@
 		B96C83CC20A352A40022D1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B96C83CB20A352A40022D1F9 /* GoogleService-Info.plist */; };
 		B96C83CE20A3539B0022D1F9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */; };
 		B98AAFAD20A635C100F4F250 /* userLoggedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98AAFAC20A635C100F4F250 /* userLoggedDelegate.swift */; };
+		B9AC8D0020AC36100099B815 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AC8CFE20AC36100099B815 /* UserCell.swift */; };
+		B9AC8D0120AC36100099B815 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AC8CFF20AC36100099B815 /* UserCell.xib */; };
+		B9AC8D0520AC51F90099B815 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AC8D0320AC51F90099B815 /* AddUserViewController.swift */; };
+		B9AC8D0620AC51F90099B815 /* AddUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AC8D0420AC51F90099B815 /* AddUserViewController.xib */; };
+		B9AC8D1020AD6C740099B815 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AC8D0E20AD6C740099B815 /* EditUserViewController.swift */; };
+		B9AC8D1120AD6C740099B815 /* EditUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AC8D0F20AD6C740099B815 /* EditUserViewController.xib */; };
+		B9AC8D1B20AD83A40099B815 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AC8D1920AD83A40099B815 /* ResetViewController.swift */; };
+		B9AC8D1C20AD83A40099B815 /* ResetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AC8D1A20AD83A40099B815 /* ResetViewController.xib */; };
 		B9D1CEF520A201FF00B3F8B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1CEF420A201FF00B3F8B3 /* AppDelegate.swift */; };
 		B9D1CEFC20A2020200B3F8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D1CEFB20A2020200B3F8B3 /* Assets.xcassets */; };
 		B9D1CEFF20A2020200B3F8B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D1CEFD20A2020200B3F8B3 /* LaunchScreen.storyboard */; };
@@ -46,6 +62,14 @@
 		B95B0F7020A2E25200159A2B /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 		B95B8E8020A75E4F00B6287A /* VisitDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDelegate.swift; sourceTree = "<group>"; };
 		B95B8E8220A75F0200B6287A /* UIImage+cache+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+cache+resize.swift"; sourceTree = "<group>"; };
+		B95D683B20AD8A920018F4FE /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		B95D684320AD98D60018F4FE /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		B95D684420AD98D60018F4FE /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		B95D684B20ADB0E30018F4FE /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		B95D684C20ADB0E30018F4FE /* Menu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
+		B95D685020ADDB8E0018F4FE /* MyToursController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyToursController.swift; sourceTree = "<group>"; };
+		B95D685120ADDB8E0018F4FE /* MyToursController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyToursController.xib; sourceTree = "<group>"; };
+		B95D685420AE15540018F4FE /* ValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidEmail.swift; sourceTree = "<group>"; };
 		B969BBA320A487D100227EA7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B969BBA520A4C5C800227EA7 /* ArrayFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayFilter.swift; sourceTree = "<group>"; };
 		B969BBA820A4E21200227EA7 /* UserAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlert.swift; sourceTree = "<group>"; };
@@ -55,6 +79,14 @@
 		B96C83CD20A3539B0022D1F9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B98AAFA920A5C66500F4F250 /* Notoryou_Showroom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notoryou_Showroom.entitlements; sourceTree = "<group>"; };
 		B98AAFAC20A635C100F4F250 /* userLoggedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userLoggedDelegate.swift; sourceTree = "<group>"; };
+		B9AC8CFE20AC36100099B815 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		B9AC8CFF20AC36100099B815 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		B9AC8D0320AC51F90099B815 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		B9AC8D0420AC51F90099B815 /* AddUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserViewController.xib; sourceTree = "<group>"; };
+		B9AC8D0E20AD6C740099B815 /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		B9AC8D0F20AD6C740099B815 /* EditUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditUserViewController.xib; sourceTree = "<group>"; };
+		B9AC8D1920AD83A40099B815 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
+		B9AC8D1A20AD83A40099B815 /* ResetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetViewController.xib; sourceTree = "<group>"; };
 		B9D1CEF120A201FF00B3F8B3 /* Notoryou_Showroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notoryou_Showroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D1CEF420A201FF00B3F8B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D1CEFB20A2020200B3F8B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,8 +131,8 @@
 		B95B0F6E20A2E23800159A2B /* AddVisit */ = {
 			isa = PBXGroup;
 			children = (
-				B95B0F6F20A2E25200159A2B /* AddViewController.swift */,
-				B95B0F7020A2E25200159A2B /* AddViewController.xib */,
+				B9AC8D0A20AC7A290099B815 /* Controller */,
+				B9AC8D0B20AC7A310099B815 /* View */,
 			);
 			path = AddVisit;
 			sourceTree = "<group>";
@@ -127,6 +159,7 @@
 			children = (
 				B969BBA520A4C5C800227EA7 /* ArrayFilter.swift */,
 				B95B8E8220A75F0200B6287A /* UIImage+cache+resize.swift */,
+				B95D685420AE15540018F4FE /* ValidEmail.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -137,6 +170,67 @@
 				B9FD6B9120A8D18900523D81 /* CustomTextField.swift */,
 			);
 			path = UIClasses;
+			sourceTree = "<group>";
+		};
+		B95D683720AD8A4D0018F4FE /* Visits */ = {
+			isa = PBXGroup;
+			children = (
+				B95D684F20ADDAF30018F4FE /* MyTours */,
+				B95B0F6E20A2E23800159A2B /* AddVisit */,
+				B9FD6B9520A8E2E200523D81 /* EditVisit */,
+				B9D1CF0B20A2029400B3F8B3 /* Home */,
+				B9D1CF2B20A2D3B600B3F8B3 /* Player */,
+			);
+			path = Visits;
+			sourceTree = "<group>";
+		};
+		B95D683820AD8A560018F4FE /* Reset */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D1920AD83A40099B815 /* ResetViewController.swift */,
+				B9AC8D1A20AD83A40099B815 /* ResetViewController.xib */,
+			);
+			path = Reset;
+			sourceTree = "<group>";
+		};
+		B95D683920AD8A630018F4FE /* LoginControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B969BBAC20A57E0100227EA7 /* Login */,
+				B95D683820AD8A560018F4FE /* Reset */,
+			);
+			path = LoginControllers;
+			sourceTree = "<group>";
+		};
+		B95D683A20AD8A750018F4FE /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D0220AC51D60099B815 /* UserList */,
+				B9AC8D0720AC7A0A0099B815 /* AddUser */,
+				B9AC8D1420AD6CA80099B815 /* EditUser */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		B95D683E20AD93E40018F4FE /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B95D683B20AD8A920018F4FE /* Container.swift */,
+				B95D684320AD98D60018F4FE /* MenuCell.swift */,
+				B95D684420AD98D60018F4FE /* MenuCell.xib */,
+				B95D684B20ADB0E30018F4FE /* Menu.swift */,
+				B95D684C20ADB0E30018F4FE /* Menu.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		B95D684F20ADDAF30018F4FE /* MyTours */ = {
+			isa = PBXGroup;
+			children = (
+				B95D685020ADDB8E0018F4FE /* MyToursController.swift */,
+				B95D685120ADDB8E0018F4FE /* MyToursController.xib */,
+			);
+			path = MyTours;
 			sourceTree = "<group>";
 		};
 		B969BBA720A4CF6000227EA7 /* Helpers */ = {
@@ -154,10 +248,119 @@
 		B969BBAC20A57E0100227EA7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B969BBAD20A57E1200227EA7 /* LoginViewController.swift */,
-				B969BBAE20A57E1200227EA7 /* LoginViewController.xib */,
+				B9AC8D1720AD82E90099B815 /* Controllers */,
+				B9AC8D1820AD82F40099B815 /* View */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		B9AC8D0220AC51D60099B815 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D0920AC7A200099B815 /* Controller */,
+				B9AC8D0820AC7A190099B815 /* views */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		B9AC8D0720AC7A0A0099B815 /* AddUser */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D1320AD6C8D0099B815 /* View */,
+				B9AC8D1220AD6C850099B815 /* Controller */,
+			);
+			path = AddUser;
+			sourceTree = "<group>";
+		};
+		B9AC8D0820AC7A190099B815 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B9FD6B9C20AA19DD00523D81 /* UserManagerViewController.xib */,
+				B9AC8CFE20AC36100099B815 /* UserCell.swift */,
+				B9AC8CFF20AC36100099B815 /* UserCell.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		B9AC8D0920AC7A200099B815 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9FD6B9B20AA19DD00523D81 /* UserManagerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B9AC8D0A20AC7A290099B815 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B95B0F6F20A2E25200159A2B /* AddViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B9AC8D0B20AC7A310099B815 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B95B0F7020A2E25200159A2B /* AddViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9AC8D1220AD6C850099B815 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D0320AC51F90099B815 /* AddUserViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B9AC8D1320AD6C8D0099B815 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D0420AC51F90099B815 /* AddUserViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9AC8D1420AD6CA80099B815 /* EditUser */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D1520AD6CBE0099B815 /* Controller */,
+				B9AC8D1620AD6CC50099B815 /* View */,
+			);
+			path = EditUser;
+			sourceTree = "<group>";
+		};
+		B9AC8D1520AD6CBE0099B815 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D0E20AD6C740099B815 /* EditUserViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B9AC8D1620AD6CC50099B815 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9AC8D0F20AD6C740099B815 /* EditUserViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9AC8D1720AD82E90099B815 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B969BBAD20A57E1200227EA7 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B9AC8D1820AD82F40099B815 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B969BBAE20A57E1200227EA7 /* LoginViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B9D1CEE820A201FF00B3F8B3 = {
@@ -275,13 +478,10 @@
 		B9FD6B9420A8E2D700523D81 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B969BBAC20A57E0100227EA7 /* Login */,
-				B95B0F6E20A2E23800159A2B /* AddVisit */,
-				B9FD6B9520A8E2E200523D81 /* EditVisit */,
-				B9D1CF0B20A2029400B3F8B3 /* Home */,
-				B9D1CF2B20A2D3B600B3F8B3 /* Player */,
-				B9FD6B9B20AA19DD00523D81 /* UserManagerViewController.swift */,
-				B9FD6B9C20AA19DD00523D81 /* UserManagerViewController.xib */,
+				B95D683E20AD93E40018F4FE /* Menu */,
+				B95D683920AD8A630018F4FE /* LoginControllers */,
+				B95D683720AD8A4D0018F4FE /* Visits */,
+				B95D683A20AD8A750018F4FE /* User */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +515,7 @@
 				B9D1CEEE20A201FF00B3F8B3 /* Frameworks */,
 				B9D1CEEF20A201FF00B3F8B3 /* Resources */,
 				3101087A2C22D0C2C4CFA227 /* [CP] Embed Pods Frameworks */,
+				B95D685620AF04440018F4FE /* ShellScript */,
 				62037A37C8056AD58B144564 /* [CP] Copy Pods Resources */,
 				B9FD6B9A20A9DA7D00523D81 /* ShellScript */,
 			);
@@ -371,13 +572,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D1CEFF20A2020200B3F8B3 /* LaunchScreen.storyboard in Resources */,
+				B9AC8D1C20AD83A40099B815 /* ResetViewController.xib in Resources */,
 				B9D1CF2720A2434400B3F8B3 /* notoryou.js in Resources */,
+				B95D685320ADDB8E0018F4FE /* MyToursController.xib in Resources */,
 				B9FD6B9920A8E2FA00523D81 /* EditViewController.xib in Resources */,
 				B9D1CF2520A2206A00B3F8B3 /* PlayerViewController.xib in Resources */,
 				B9D1CEFC20A2020200B3F8B3 /* Assets.xcassets in Resources */,
 				B9D1CF2120A21FA500B3F8B3 /* Showcell.xib in Resources */,
+				B95D684E20ADB0E30018F4FE /* Menu.xib in Resources */,
 				B95B0F7220A2E25200159A2B /* AddViewController.xib in Resources */,
+				B9AC8D1120AD6C740099B815 /* EditUserViewController.xib in Resources */,
+				B95D684620AD98D60018F4FE /* MenuCell.xib in Resources */,
+				B9AC8D0620AC51F90099B815 /* AddUserViewController.xib in Resources */,
 				B9FD6B9E20AA19DD00523D81 /* UserManagerViewController.xib in Resources */,
+				B9AC8D0120AC36100099B815 /* UserCell.xib in Resources */,
 				B9D1CF1D20A21ABD00B3F8B3 /* HomeViewController.xib in Resources */,
 				B96C83CC20A352A40022D1F9 /* GoogleService-Info.plist in Resources */,
 				B969BBB020A57E1200227EA7 /* LoginViewController.xib in Resources */,
@@ -398,6 +606,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -408,6 +617,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -450,6 +660,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B95D685620AF04440018F4FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		B9FD6B9A20A9DA7D00523D81 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,20 +694,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D1CF1C20A21ABD00B3F8B3 /* HomeViewController.swift in Sources */,
+				B95D685520AE15540018F4FE /* ValidEmail.swift in Sources */,
 				B95B8E8320A75F0200B6287A /* UIImage+cache+resize.swift in Sources */,
 				B9D1CF1920A2197D00B3F8B3 /* Show.swift in Sources */,
+				B9AC8D0520AC51F90099B815 /* AddUserViewController.swift in Sources */,
 				B96C83CE20A3539B0022D1F9 /* FirebaseManager.swift in Sources */,
 				B95B0F7120A2E25200159A2B /* AddViewController.swift in Sources */,
 				B969BBA420A487D100227EA7 /* User.swift in Sources */,
+				B95D685220ADDB8E0018F4FE /* MyToursController.swift in Sources */,
 				B9D1CF2020A21FA500B3F8B3 /* Showcell.swift in Sources */,
 				B969BBA620A4C5C800227EA7 /* ArrayFilter.swift in Sources */,
 				B9FD6B9820A8E2FA00523D81 /* EditViewController.swift in Sources */,
 				B98AAFAD20A635C100F4F250 /* userLoggedDelegate.swift in Sources */,
 				B9D1CEF520A201FF00B3F8B3 /* AppDelegate.swift in Sources */,
+				B9AC8D1020AD6C740099B815 /* EditUserViewController.swift in Sources */,
 				B9D1CF2420A2206A00B3F8B3 /* PlayerViewController.swift in Sources */,
+				B95D684D20ADB0E30018F4FE /* Menu.swift in Sources */,
 				B95B8E8120A75E4F00B6287A /* VisitDelegate.swift in Sources */,
 				B969BBA920A4E21200227EA7 /* UserAlert.swift in Sources */,
+				B9AC8D0020AC36100099B815 /* UserCell.swift in Sources */,
 				B969BBAF20A57E1200227EA7 /* LoginViewController.swift in Sources */,
+				B9AC8D1B20AD83A40099B815 /* ResetViewController.swift in Sources */,
+				B95D683C20AD8A920018F4FE /* Container.swift in Sources */,
+				B95D684520AD98D60018F4FE /* MenuCell.swift in Sources */,
 				B9FD6B9220A8D18900523D81 /* CustomTextField.swift in Sources */,
 				B9FD6B9D20AA19DD00523D81 /* UserManagerViewController.swift in Sources */,
 			);

@@ -8,7 +8,10 @@
 
 import Foundation
 
+/// Protocol that allows user to pass user data between controllers
 protocol UserLoggedDelegate: class {
+  /// current logged user
   var currentUser: String { get set}
+  /// send currentUSer to another controller
   func sendUser() -> String
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="50" id="KGk-i7-Jjw" customClass="MenuCell" customModule="Notoryou_Showroom" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlc-yO-h5h">
+                        <rect key="frame" x="50" y="11" width="238" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete " translatesAutoresizingMaskIntoConstraints="NO" id="7lF-4k-3u3">
+                        <rect key="frame" x="20" y="12" width="20" height="20"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Jlc-yO-h5h" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="7e8-yZ-oBg"/>
+                    <constraint firstItem="Jlc-yO-h5h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="He6-0G-dos"/>
+                    <constraint firstItem="7lF-4k-3u3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Lg7-b4-Fsc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Jlc-yO-h5h" secondAttribute="trailing" constant="16" id="PmC-6D-Fmp"/>
+                    <constraint firstItem="Jlc-yO-h5h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="Z1L-6D-cy5"/>
+                    <constraint firstItem="Jlc-yO-h5h" firstAttribute="leading" secondItem="7lF-4k-3u3" secondAttribute="trailing" constant="10" id="h5w-2e-hEa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="icon" destination="7lF-4k-3u3" id="Rhd-tT-2vm"/>
+                <outlet property="titleLabel" destination="Jlc-yO-h5h" id="RRp-za-Byr"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="delete " width="20" height="20"/>
+    </resources>
+</document>

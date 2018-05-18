@@ -8,12 +8,17 @@
 
 import Foundation
 
+// MARK: - Array Extension
 extension Array {
   
+  /// This methods seeks for duplicate in an array of Elements and remove them
+  ///
+  /// - Parameter includeElement: Element
+  /// - Returns: [Element]
   func filterDuplicates(includeElement: @escaping (_ lhs: Element, _ rhs: Element) -> Bool) -> [Element] {
     
     var results = [Element]()
-    
+    // Iterate throught elements
     forEach { (element) in
       
       let existingElements = results.filter {
