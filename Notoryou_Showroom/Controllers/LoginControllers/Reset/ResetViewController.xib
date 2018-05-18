@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResetViewController" customModule="Notoryou_Showroom" customModuleProvider="target">
             <connections>
+                <outlet property="prompt" destination="qPL-f8-MC0" id="SrU-2r-E3U"/>
                 <outlet property="resetEmail" destination="QJ7-mc-H3D" id="MJB-iD-vlK"/>
+                <outlet property="restButton" destination="1Ge-Di-ypI" id="gsS-GF-0O2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

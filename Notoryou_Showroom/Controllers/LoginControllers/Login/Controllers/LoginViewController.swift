@@ -21,6 +21,12 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var usernameField: UITextField!
   
+  @IBOutlet weak var username: UILabel!
+  @IBOutlet weak var password: UILabel!
+
+  @IBOutlet weak var reset: UIButton!
+  
+  
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,6 +34,10 @@ class LoginViewController: UIViewController {
     passwordField.delegate = self
     usernameField.delegate = self
     // display UI
+    username.text = NSLocalizedString("Username", comment: "")
+    password.text = NSLocalizedString("Password", comment: "")
+    reset.setTitle(NSLocalizedString("Forgot password?", comment: ""), for: .normal)
+    singInButton.setTitle(NSLocalizedString("Sign In", comment: ""), for: .normal)
     shouldDisplaySignInButton()
   }
   

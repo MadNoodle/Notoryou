@@ -30,6 +30,11 @@ class AddViewController: UIViewController {
   @IBOutlet weak var urlTextField: UITextField!
   @IBOutlet weak var titleTextField: UITextField!
   
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var setPublicLabel: UILabel!
+  @IBOutlet weak var thumbnailUrlLabel: UILabel!
+  @IBOutlet weak var visitUrlLabel: UILabel!
+  
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +42,10 @@ class AddViewController: UIViewController {
     if let user = UserDefaults.standard.object(forKey: "currentUser") as? String {
       currentUser = user
     }
-    
+    titleLabel.text = NSLocalizedString("Title", comment: "")
+    visitUrlLabel.text = NSLocalizedString("Immersive Tour Url", comment: "")
+    thumbnailUrlLabel.text = NSLocalizedString("Thumbnail Url", comment: "")
+    setPublicLabel.text = NSLocalizedString("Set public", comment: "")
     // delegation
     urlTextField.delegate = self
     titleTextField.delegate = self
@@ -65,7 +73,6 @@ class AddViewController: UIViewController {
   
   /// CallBack function for save button that saves the visit in firebase
   @objc func saveVisit() {
-   print("saving")
     showLoader()
     // check required fields
     if titleTextField.text != "" && urlTextField.text != "" && previewTextField.text != "" {

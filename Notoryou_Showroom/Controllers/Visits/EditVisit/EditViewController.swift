@@ -30,6 +30,10 @@ class EditViewController: UIViewController {
   @IBOutlet weak var urlTextField: UITextField!
   @IBOutlet weak var titleTextField: UITextField!
   
+  @IBOutlet weak var visitUrlLabel: UILabel!
+  @IBOutlet weak var thumbnailUrlLabel: UILabel!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var setPublicLabel: UILabel!
   // MARK: - LIFECYCLEMETHODS
   
   override func viewDidLoad() {
@@ -38,6 +42,12 @@ class EditViewController: UIViewController {
     if let user = UserDefaults.standard.object(forKey: "currentUser") as? String {
       currentUser = user
     }
+    
+    titleLabel.text = NSLocalizedString("Title", comment: "")
+    visitUrlLabel.text = NSLocalizedString("Immersive Tour Url", comment: "")
+    thumbnailUrlLabel.text = NSLocalizedString("Thumbnail Url", comment: "")
+    setPublicLabel.text = NSLocalizedString("Set public", comment: "")
+    
     // add save button
     self.navigationController?.navigationBar.isTranslucent = false
     let addButton = UIBarButtonItem(title: NSLocalizedString("update", comment: ""), style: .done, target: self, action: #selector(updateVisit))

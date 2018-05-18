@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  Notoryou_Showroom
+
+  Created by Mathieu Janneau on 18/05/2018.
+  Copyright © 2018 Mathieu Janneau. All rights reserved.
+*/
+"Username" = "Nom d'utilisateur";
+"Password" = "Mot de passe";
+"Forgot password?" = "Mot de passe oublié?";
+"Sign In" = "S'enregistrer";
+"Enter your account's email" = "Veuillez entrez votre e-mail";
+"reset" = "Réinitialiser";
+"Title" = "Titre";
+"Immersive Tour Url" = "Url de la visite immersive";
+"Thumbnail Url" = "Url de l'image de prévisualisation";
+"Set public" = "Rendre publique";
+"Lastname" = "Nom";
+"Firstname" = "Prénom";
+"E-mail" = "E-mail";
+"Access level" = "Autorisations";
+"Error" = "Erreur";
+"Sorry" = "Désolé";
+"Warning" = "Attention";
+"Congratulations" = "Bravo";
+"Administrator" = "Administrateur";
+"Registered user" = "Utilisateur Enregistré";
+"Visitor" = "Visiteur";
+"Home" = "Accueil";
+"My Tours" = "Mes visites";
+"Log out" = "Se déconnecter";
+"User Management" = "Administration";
+"This user is not allowed to access" = "Vous n'avez pas les droits nécessaires";
+"Please enter valid informations" = "Veuillez entrer des informations valides";
+"Reset Failed" = "Echec de la réinitialisation";
+"OK" = "OK";
+"Cancel" = "Annuler";
+"Confirm" = "Confirmer";
+"Reset email sent successfully" = "Email de reinitialisation envoyé";
+"Check your email" = "Veuillez vérifier votre e-mail";
+"Please enter a valid email" = "Veuillez entrer une adresse e-mail valide";
+"There is no tour available for you" = "Vous n'avez aucune visite disponible";
+"Please choose a visit to share" = "Veuillez choisir au moins une visite à partager";
+"Send email" = "Envoyer par e-mail";
+"Do you want to share these links?" = "Voulez-vous partager ces liens?";
+"Notoryou sent you some links" = "Notoryou vous envoie ces visites virtuelles";
+"There was an error while sending mail" = "Une erreur est apparue lors de l'envoie";
+"Your visit has been saved" = "Votre visite a été sauvegardée";
+"Please fulfill all required fields" = "Veuillez remplir les champs requis";
+"All users will access to this content" = "Tous les utilisateurs pourront avoir accès à ce contenu";
+"Please enter a valid url" = "Veuillez entrer une url valide";
+"update" = "mettre à jour";
+"save" = "sauver";
+"Your visit has been updated" = "Votre visite a &t& mise à jour";
+"Tours" = "Visites";
+"You are about to permanently delete this visit" = "Vous êtes sur le point d'effacer définitivement cette visite";
+"Delete" = "Effacer";
+"edit" = "éditer";
+"Admin panel" = "Administration";
+"Your user has been created" = "L'utilisateur a été crée";
+"Your user has been updated" = "L'utilisateur a été mis à jour";
+"You are about to permanently delete a user" = "Vous êtes sur le point d'effacer définitivement cet utilisateur";

@@ -12,8 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Notoryou_Showroom" customModuleProvider="target">
             <connections>
+                <outlet property="password" destination="qPv-5x-pUC" id="Iz2-rv-9tb"/>
                 <outlet property="passwordField" destination="Ylc-qt-fqU" id="Lwt-cF-M8h"/>
+                <outlet property="reset" destination="ZMz-Ns-b4N" id="PSK-Q4-pTL"/>
                 <outlet property="singInButton" destination="Voc-Cg-jrY" id="mta-j3-iTB"/>
+                <outlet property="username" destination="afj-eg-dCE" id="X17-nQ-3hS"/>
                 <outlet property="usernameField" destination="8Tm-jP-Dxm" id="Unq-Ir-uzh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

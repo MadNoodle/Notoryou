@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate, S
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "Tours"
+    self.title = NSLocalizedString("Tours", comment: "")
 
     // load current user
     if let user = UserDefaults.standard.object(forKey: "currentUser") as? String {
@@ -278,7 +278,7 @@ extension HomeViewController: MFMailComposeViewControllerDelegate {
     let mailComposerVc = MFMailComposeViewController()
     mailComposerVc.mailComposeDelegate = self
    
-    mailComposerVc.setSubject(NSLocalizedString("Notoryou sends you some links", comment: ""))
+    mailComposerVc.setSubject(NSLocalizedString("Notoryou sent you some links", comment: ""))
     let body = generateMailBody(from: showToExport)
     mailComposerVc.setMessageBody(body, isHTML: true)
     

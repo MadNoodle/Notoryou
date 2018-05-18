@@ -13,10 +13,14 @@ class ResetViewController: UIViewController, SideMenuItemContent {
   
   // MARK: - OUTLETS
   @IBOutlet weak var resetEmail: CustomTextField!
+  @IBOutlet weak var restButton: UIButton!
+  @IBOutlet weak var prompt: UILabel!
   
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
+    prompt.text = NSLocalizedString("Enter your account's email", comment: "")
+    restButton.setTitle(NSLocalizedString("Reset", comment: ""), for: .normal)
     // Add Menu Button
     let menuButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Menu"), style: .done, target: self, action: #selector(showMenu))
     self.navigationController?.navigationItem.leftBarButtonItems = [menuButton]

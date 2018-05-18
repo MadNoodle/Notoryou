@@ -13,10 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewController" customModule="Notoryou_Showroom" customModuleProvider="target">
             <connections>
                 <outlet property="previewTextField" destination="peB-B9-n2B" id="uJp-wK-hnM"/>
+                <outlet property="setPublicLabel" destination="sEP-iu-pZx" id="GlW-6P-eqx"/>
+                <outlet property="thumbnailUrlLabel" destination="tP4-mM-mFE" id="1NZ-z6-BNs"/>
                 <outlet property="thumbnailView" destination="4Kc-lj-SLn" id="tbM-7n-3OR"/>
+                <outlet property="titleLabel" destination="eut-dE-fha" id="YsN-8a-HvW"/>
                 <outlet property="titleTextField" destination="NJb-cv-pDQ" id="cXs-ZM-NuL"/>
                 <outlet property="urlTextField" destination="SfA-zo-XIV" id="wWi-eD-FWH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="visitUrlLabel" destination="srO-ZM-iNN" id="tnb-GT-uwB"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

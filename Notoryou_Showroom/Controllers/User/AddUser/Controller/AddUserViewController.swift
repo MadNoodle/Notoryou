@@ -21,6 +21,11 @@ class AddUserViewController: UIViewController {
   @IBOutlet weak var emailField: CustomTextField!
   @IBOutlet weak var picker: UIPickerView!
   
+  @IBOutlet weak var lastNameLabel: UILabel!
+  @IBOutlet weak var firstNameLabel: UILabel!
+  @IBOutlet weak var emailLabel: UILabel!
+  @IBOutlet weak var passwordLabel: UILabel!
+  @IBOutlet weak var accessLevelLabel: UILabel!
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +38,11 @@ class AddUserViewController: UIViewController {
     picker.delegate = self
     picker.dataSource = self
     
+    lastNameLabel.text = NSLocalizedString("Lastname", comment: "")
+    firstNameLabel.text = NSLocalizedString("Firstname", comment: "")
+    emailLabel.text = NSLocalizedString("E-mail", comment: "")
+    passwordLabel.text = NSLocalizedString("Password", comment: "")
+    accessLevelLabel.text = NSLocalizedString("Access level", comment: "")
     // add save button
     self.navigationController?.navigationBar.isTranslucent = false
     let addButton = UIBarButtonItem(title: NSLocalizedString("save", comment: ""), style: .done, target: self, action: #selector(createUser))

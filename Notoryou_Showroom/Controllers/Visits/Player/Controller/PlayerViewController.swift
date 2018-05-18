@@ -58,7 +58,7 @@ class PlayerViewController: UIViewController {
   /// Callback function to delete the current visit
   @objc func deleteVisit() {
     
-    let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("Warning you are about to permanently delete this visit", comment: ""), preferredStyle: .actionSheet)
+    let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("You are about to permanently delete this visit", comment: ""), preferredStyle: .actionSheet)
     
     let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .default) { (_) in
 

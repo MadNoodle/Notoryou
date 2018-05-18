@@ -12,10 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddUserViewController" customModule="Notoryou_Showroom" customModuleProvider="target">
             <connections>
+                <outlet property="accessLevelLabel" destination="asK-Ld-AYN" id="ViG-z5-v9Y"/>
                 <outlet property="emailField" destination="5w8-Wl-jpw" id="jL6-bG-Lq6"/>
+                <outlet property="emailLabel" destination="ZSF-SD-WWn" id="GLu-Oc-Zpr"/>
                 <outlet property="firstNameField" destination="m9O-8b-WbK" id="0Eg-n7-dVn"/>
+                <outlet property="firstNameLabel" destination="Rff-sH-hf2" id="9dU-U3-hFA"/>
                 <outlet property="lastNameField" destination="yHj-eh-Yah" id="Xim-AV-Mxy"/>
+                <outlet property="lastNameLabel" destination="s1L-3g-fEt" id="2o9-jW-Ngt"/>
                 <outlet property="passwordField" destination="fOe-Zs-RvH" id="F89-Pz-5zM"/>
+                <outlet property="passwordLabel" destination="SHm-VX-nwu" id="BxT-aP-hEs"/>
                 <outlet property="picker" destination="dmX-vN-TY1" id="ZRY-04-tEo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  Notoryou_Showroom
+
+  Created by Mathieu Janneau on 18/05/2018.
+  Copyright © 2018 Mathieu Janneau. All rights reserved.
+*/
+"Username" = "Username";
+"Password" = "Password";
+"Forgot password?" = "Forgot password?";
+"Sign In" = "Sign In";
+"Enter your account's email" = "Enter your account's email";
+"reset" = "Reset";
+"Title" = "Title";
+"Immersive Tour Url" = "Immersive Tour Url";
+"Thumbnail Url" = "Thumbnail Url";
+"Set public" = "Set public";
+"Lastname" = "Lastname";
+"Firstname" = "Firstname";
+"E-mail" = "E-mail";
+"Access level" = "Access level";
+"Error" = "Error";
+"Sorry" = "Sorry";
+"Warning" = "Warning";
+"Congratulations" = "Congratulations";
+"Administrator" = "Administrator";
+"Registered user" = "Registered user";
+"Visitor" = "Visitor";
+"Home" = "Home";
+"My Tours" = "My Tours";
+"Log out" = "Log out";
+"User Management" = "User Management";
+"This user is not allowed to access" = "This user is not allowed to access";
+"Please enter valid informations" = "Please enter valid informations";
+"Reset Failed" = "Reset Failed";
+"OK" = "OK";
+"Cancel" = "Cancel";
+"Confirm" = "Confirm";
+"Reset email sent successfully" = "Reset email sent successfully";
+"Check your email" = "Check your email";
+"Please enter a valid email" = "Please enter a valid email";
+"There is no tour available for you" = "There is no tour available for you";
+"Please choose a visit to share" = "Please choose a visit to share";
+"Send email" = "Send email";
+"Do you want to share these links?" = "Do you want to share these links?";
+"Notoryou sent you some links" = "Notoryou sent you some links";
+"There was an error while sending mail" = "There was an error while sending mail";
+"Your visit has been saved" = "Your visit has been saved";
+"Please fulfill all required fields" = "Please fulfill all required fields";
+"All users will access to this content" = "All users will access to this content";
+"Please enter a valid url" = "Please enter a valid url";
+"update" = "update";
+"save" = "save";
+"Your visit has been updated" = "Your visit has been updated";
+"Tours" = "Tours";
+"You are about to permanently delete this visit" = "You are about to permanently delete this visit";
+"Delete" = "Delete";
+"edit" = "edit";
+"Admin panel" = "Admin panel";
+"Your user has been created" = "Your user has been created";
+"Your user has been updated" = "Your user has been updated";
+"You are about to permanently delete a user" = "You are about to permanently delete a user";

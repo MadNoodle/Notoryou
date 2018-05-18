@@ -98,7 +98,7 @@ class MyToursController: UIViewController, SideMenuItemContent {
       self.tableView.isEditing = false
       self.navigationItem.rightBarButtonItems![1].image = #imageLiteral(resourceName: "share ")
       if showToExport.isEmpty {
-        UserAlert.show(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("Please coose a visit to share", comment: ""), controller: self)
+        UserAlert.show(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("Please choose a visit to share", comment: ""), controller: self)
       } else {
         shouldDisplayChoice()
       }
@@ -285,7 +285,7 @@ extension MyToursController: MFMailComposeViewControllerDelegate {
     let mailComposerVc = MFMailComposeViewController()
     mailComposerVc.mailComposeDelegate = self
     
-    mailComposerVc.setSubject(NSLocalizedString("Notoryou sends you some links", comment: ""))
+    mailComposerVc.setSubject(NSLocalizedString("Notoryou sent you some links", comment: ""))
     let body = generateMailBody(from: showToExport)
     mailComposerVc.setMessageBody(body, isHTML: true)
     
