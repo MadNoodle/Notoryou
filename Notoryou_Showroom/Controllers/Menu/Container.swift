@@ -75,6 +75,7 @@ class Container: MenuContainerViewController {
   }
   /// Logout method to remove firebase current logged user
   func logOut() {
+    UserDefaults.standard.set("", forKey: "currentUser")
     // Instantiate login Vc
     let loginVc = LoginViewController()
     let firebaseAuth = Auth.auth()

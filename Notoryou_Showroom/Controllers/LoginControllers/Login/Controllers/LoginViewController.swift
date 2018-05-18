@@ -68,8 +68,18 @@ class LoginViewController: UIViewController {
           if let usr = user {
             // store in user default
             UserDefaults.standard.set(usr.user.email!, forKey: "currentUser")
-            let container = Container()
-            self.present(container, animated: true)
+            FirebaseManager.shared.loadUsers(completionHandler: { (user, _) in
+              var auth = 2
+              for usr in user! where usr.email == self.currentUser {
+                auth = usr.authorization
+              }
+              
+              let menu = Menu()
+              menu.author.1 = auth
+              let container = Container()
+              self.present(container, animated: true)
+            })
+            
           }
         }
         

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SDWebImage
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,11 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    // Override point for customization after application launch
+    // Instantiate login Vc
+    
     // initialize Firebase
     FirebaseApp.configure()
     Database.database().isPersistenceEnabled = true
-    
+
     // set navBar appearance
     UINavigationBar.appearance().tintColor = .white
     UINavigationBar.appearance().barTintColor = .black
