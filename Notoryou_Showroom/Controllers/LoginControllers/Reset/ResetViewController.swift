@@ -27,23 +27,22 @@ class ResetViewController: UIViewController, SideMenuItemContent {
     showSideMenu()
   }
   
-  
   // MARK: - ACTIONS
   @IBAction func reset(_ sender: UIButton) {
     // check if the text is not nil
     guard let email = resetEmail.text else { return}
-    if email.isValidEmailAddress(){
+    if email.isValidEmailAddress() {
     // Ask Firebase to send a reset password to this email address
     Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
-      if error != nil{
+      if error != nil {
         // Display an alert when reset fails
         let resetFailedAlert = UIAlertController(title: NSLocalizedString("Reset Failed", comment: ""), message: error!.localizedDescription, preferredStyle: .alert)
         resetFailedAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
         self.present(resetFailedAlert, animated: true, completion: nil)
-      }else {
+      } else {
         // Display alert to confirm email was sent
         let resetEmailSentAlert = UIAlertController(title: NSLocalizedString("Reset email sent successfully", comment: ""), message: NSLocalizedString("Check your email", comment: ""), preferredStyle: .alert)
-        resetEmailSentAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { action in
+        resetEmailSentAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
           self.dismiss(animated: true, completion: nil)
         }))
         self.present(resetEmailSentAlert, animated: true, completion: nil)

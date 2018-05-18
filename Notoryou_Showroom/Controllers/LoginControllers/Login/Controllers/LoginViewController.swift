@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var usernameField: UITextField!
   
-  
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -77,7 +76,7 @@ class LoginViewController: UIViewController {
   /// - Parameter sender: UIButton
   @IBAction func handleForgottenPasswords(_ sender: UIButton) {
     let resetVc = ResetViewController()
-    present(resetVc,animated:  true)
+    present(resetVc, animated: true)
   }
   
   /// Customize Login button appearance

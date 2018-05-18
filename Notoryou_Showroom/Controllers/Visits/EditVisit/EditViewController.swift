@@ -70,7 +70,7 @@ class EditViewController: UIViewController {
       guard let data = UIImagePNGRepresentation(resizedImage) else { return}
       
       // Upload in firebase Storage
-      FirebaseManager.shared.uploadImagePic(data: data, completionhandler:  { (newUrl, error) in
+      FirebaseManager.shared.uploadImagePic(data: data, completionhandler: { (newUrl, error) in
         
         if error != nil {
           UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
@@ -97,9 +97,9 @@ class EditViewController: UIViewController {
   
   /// This methods allows to download asynchroneously the image and cache it via SDWebImage
   func loadImage() {
-    guard let url = URL(string:previewTextField.text!) else { return }
+    guard let url = URL(string: previewTextField.text!) else { return }
     // downlad and cache image
-    thumbnailView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logonb"), options: [.progressiveDownload]) { (image, error, cache, url) in
+    thumbnailView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logonb"), options: [.progressiveDownload]) { (_, error, _, _) in
       // display error if needed
       if error != nil {
         UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Please enter a valid url", comment: ""), controller: self)
@@ -120,7 +120,6 @@ extension EditViewController: UITextFieldDelegate {
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     self.view.endEditing(true)
   }
-  
   
   /// When user presses enter on keyboard. it validates his text
   /// and send translation request. the keyboard disappear.

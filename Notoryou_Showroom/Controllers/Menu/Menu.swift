@@ -9,7 +9,6 @@
 import UIKit
 import InteractiveSideMenu
 
-
 class Menu: MenuViewController {
   
   // MARK: - PROPERTIES
@@ -18,18 +17,14 @@ class Menu: MenuViewController {
   /// Currently logged user in firebase
   var loggedUser: User!
   /// authorization level for user
-  var author = ""
+  var author: (String, Int) = (label: "", level: 2)
   
   // MARK: - OUTLETS
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var usernameLabel: UILabel!
   @IBOutlet weak var roleLabel: UILabel!
   
-  // MARK: - LIFECYCLE METHODS
-
-  
-
-  
+  // MARK: - LIFECYCLE METHODS 
   override func viewDidLoad() {
         super.viewDidLoad()
     // load current user
@@ -62,18 +57,19 @@ class Menu: MenuViewController {
         self.usernameLabel.text = "\(usr.firstName!) \(usr.lastName!)"
         switch usr.authorization {
         case 0:
-          self.author = "Administrator"
+          self.author = ("Administrator",  0)
         case 1:
-          self.author = "Registered user"
+          self.author = ("Registered user", 1)
         case 2:
-          self.author = "Visitor"
+          self.author = ("Visitor", 2)
           
         default:
           break
         }
+        print(usr.authorization!)
       }
       // assign the user role label his current granted access
-      self.roleLabel.text = NSLocalizedString(self.author, comment: "")
+      self.roleLabel.text = NSLocalizedString(self.author.0, comment: "")
     }
   }
   
@@ -93,10 +89,10 @@ extension Menu: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     var count = 2
-    if author == "Administrator" {
+    if author.1 == 0 {
       count = 4
       
-    } else if author == "Registered" {
+    } else if author.1 == 1 {
       count = 3
     }
     return count
@@ -104,8 +100,7 @@ extension Menu: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
    
-    
-    if author == "Administrator" {
+    if author.1 == 0 {
     switch indexPath.row {
     case 0 :
       showController(0)
@@ -121,7 +116,7 @@ extension Menu: UITableViewDelegate, UITableViewDataSource {
       break
       }
       
-    } else if author == "Registered" {
+    } else if author.1 == 1 {
       switch indexPath.row {
       case 0 :
         showController(0)
@@ -151,7 +146,7 @@ extension Menu: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as? MenuCell
     
-    if author == "Administrator" {
+    if author.1 == 0 {
     switch indexPath.row {
     case 0 :
       cell?.titleLabel.text = NSLocalizedString("Home", comment: "")
@@ -170,7 +165,7 @@ extension Menu: UITableViewDelegate, UITableViewDataSource {
       break
     }
       
-    } else if author == "Registered" {
+    } else if author.1 == 1 {
       switch indexPath.row {
       case 0 :
         cell?.titleLabel.text = NSLocalizedString("Home", comment: "")

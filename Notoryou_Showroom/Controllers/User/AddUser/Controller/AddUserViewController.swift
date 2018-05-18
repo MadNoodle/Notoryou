@@ -79,7 +79,6 @@ class AddUserViewController: UIViewController {
       self.view.endEditing(true)
     }
     
-    
     /// When user presses enter on keyboard. it validates his text
     /// and send translation request. the keyboard disappear.
     ///
@@ -90,10 +89,9 @@ class AddUserViewController: UIViewController {
       return (true)
     }
     
-
 }
 
-// MARK:- PICKERVIEW DELEGATE
+// MARK: - PICKERVIEW DELEGATE
 extension AddUserViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
@@ -115,8 +113,7 @@ extension AddUserViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     // change picker text color to white
-    let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+    let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     return attributedString
   }
 }
-

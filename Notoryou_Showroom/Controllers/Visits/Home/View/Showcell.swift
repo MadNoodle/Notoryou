@@ -35,8 +35,5 @@ class Showcell: UITableViewCell {
     if editing {
       self.editingAccessoryView?.backgroundColor = .black
   }
-  }
-
-  
-    
+  }  
 }

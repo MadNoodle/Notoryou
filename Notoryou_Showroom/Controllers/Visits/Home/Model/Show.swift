@@ -22,7 +22,7 @@ struct Show {
   var image: UIImage!
   
   // Init Show from values
-  init(title: String, user:String, url: String, imageName: String, visibility: Int){
+  init(title: String, user: String, url: String, imageName: String, visibility: Int) {
     self.ref = Database.database().reference()
     self.title = title
     self.url = "https://my.matterport.com/show/?m=\(url)&nozoom=1%27"
@@ -39,7 +39,7 @@ struct Show {
     self.ref = snapshot.ref
     self.user = dict["user"] as? String
     self.title = dict["title"] as? String
-    if let visitUrl = dict["id"] as? String{
+    if let visitUrl = dict["id"] as? String {
     self.url = "https://my.matterport.com/show/?m=\(visitUrl)&nozoom=1%27"
       
     }

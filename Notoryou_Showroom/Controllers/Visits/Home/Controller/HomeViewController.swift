@@ -17,12 +17,11 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate, S
     return currentUser
   }
   
-
   // MARK: - PROPERTIES
   
   var shows = [Show]()
   var currentShow: Show?
-  var showToExport = [(String,String)]()
+  var showToExport = [(String, String)]()
   let blackView = UIView()
   let indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
   var currentUser = ""
@@ -71,14 +70,14 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate, S
     DispatchQueue.main.async {
       FirebaseManager.shared.loadVisits(for: self.currentUser) { (result, error) in
         if error != nil {
-           UserAlert.show(title: NSLocalizedString("Error", comment: ""), message:error!.localizedDescription , controller: self)
+           UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
         }
-        if result != nil{
+        if result != nil {
           self.shows = result!
           self.tableView.reloadData()
           self.hideLoader()
         } else {
-         UserAlert.show(title: NSLocalizedString("sorry", comment: ""), message:NSLocalizedString("There is no tour available for you", comment: "") , controller: self)
+         UserAlert.show(title: NSLocalizedString("sorry", comment: ""), message: NSLocalizedString("There is no tour available for you", comment: ""), controller: self)
         }
       }
     }
@@ -94,25 +93,18 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate, S
     self.navigationController?.pushViewController(addVc, animated: true)
   }
   
-  
-  
   // Set editing Mode
   
-  @objc func showEditing(sender: UIBarButtonItem)
-  {
-    if(self.tableView.isEditing == true)
-    {
+  @objc func showEditing(sender: UIBarButtonItem) {
+    if self.tableView.isEditing == true {
       self.tableView.isEditing = false
       self.navigationItem.rightBarButtonItems![1].image = #imageLiteral(resourceName: "share ")
-      if showToExport.count == 0 {
+      if showToExport.isEmpty {
         UserAlert.show(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("Please choose a visit to share", comment: ""), controller: self)
       } else {
         shouldDisplayChoice()
       }
-      
-    }
-    else
-    {
+    } else {
       self.tableView.isEditing = true
       self.navigationItem.rightBarButtonItems![1].image = #imageLiteral(resourceName: "send ")
     }
@@ -129,7 +121,7 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate, S
         if error != nil {
           UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
         }
-        if result != nil{
+        if result != nil {
           self.shows = result!
           self.tableView.reloadData()
           self.hideLoader()
@@ -167,8 +159,6 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate, S
     self.navigationItem.leftBarButtonItems = [logOutButton]
   }
   
-
-  
   fileprivate func showLoader() {
     // add black bg
     self.view.addSubview(blackView)
@@ -192,7 +182,7 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate, S
   }
   
   fileprivate func shouldDisplayChoice() {
-    let sendAction = UIAlertAction(title: NSLocalizedString("Send email", comment: ""), style: .default) { (action) in
+    let sendAction = UIAlertAction(title: NSLocalizedString("Send email", comment: ""), style: .default) { (_) in
       self.sendMail()
     }
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
@@ -201,12 +191,10 @@ class HomeViewController: UIViewController, VisitDelegate, UserLoggedDelegate, S
     let alertController = UIAlertController(title: "Confirm", message: NSLocalizedString("Do you want to share these links?", comment: ""), preferredStyle: .actionSheet)
     alertController.addAction(sendAction)
     alertController.addAction(cancelAction)
-    present(alertController, animated:  true)
+    present(alertController, animated: true)
   }
   
 }
-
-
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   
@@ -239,8 +227,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
     return .insert
   }
-  
-  
+
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     
     if editingStyle == .insert {
@@ -257,7 +244,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     cell.backgroundColor = .black
   }
   
-  
   func sendVisit() -> Show? {
     guard let show = currentShow else { return nil }
     return show
@@ -266,18 +252,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: MFMailComposeViewControllerDelegate {
   
-  
   /// Opens Mail app to send the list f selected links
   fileprivate func sendMail() {
     let mailCompVc = configureMailComposerViewController()
     if MFMailComposeViewController.canSendMail() {
-      self.present(mailCompVc,animated: true)
+      self.present(mailCompVc, animated: true)
     } else {
       self.showSendMailErrorAlert()
     }
   }
   
-  func generateMailBody(from array: [(String,String)]) -> String {
+  func generateMailBody(from array: [(String, String)]) -> String {
     var body = ""
     var links = [String]()
     for item in array {
@@ -307,5 +292,4 @@ extension HomeViewController: MFMailComposeViewControllerDelegate {
     controller.dismiss(animated: true, completion: nil)
   }
 }
-
 

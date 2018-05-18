@@ -28,27 +28,25 @@ class FirebaseManager {
   /// Firebase Storage Reference for picture storage
   let storageRef = Storage.storage().reference()
   
-
-  
   /// Create a Visit Entity in the Firebase database
-  func createVisit(user: String, date: String, title: String, id: String, imageUrl: String, visibility: Int, completion: @escaping (_ status:String, _ error: Error?) -> Void) {
+  func createVisit(user: String, date: String, title: String, id: String, imageUrl: String, visibility: Int, completion: @escaping (_ status: String, _ error: Error?) -> Void) {
     
     // Set new parameters
     let newVisit = ["user": user, "date": date, "title": title, "id": id, "imageUrl": imageUrl, "visibilty": visibility] as [String: Any]
     // update DB
     
-    visitRef.childByAutoId().setValue(newVisit) { (error, ref) in
+    visitRef.childByAutoId().setValue(newVisit) { (error, _) in
       if error != nil {
         completion("succes", nil)
       } else {
-        completion("error",error)
+        completion("error", error)
       }
     }
     
   }
   
   /// Load visit entities from Firebase
-  func loadVisits(for currentUser: String, completionHandler: @escaping (_ visits: [Show]?, _ error: Error?)->()) {
+  func loadVisits(for currentUser: String, completionHandler: @escaping (_ visits: [Show]?, _ error: Error?) -> Void) {
    
     visitRef.observe(.value) { (snapshot, error) in
       var visitArray = [Show]()
@@ -65,7 +63,7 @@ class FirebaseManager {
       }
       
       // filter public visits
-      for item in newItems where item.visibility == 2{
+      for item in newItems where item.visibility == 2 {
         visitArray.insert(item, at: 0)
       }
       
@@ -79,15 +77,15 @@ class FirebaseManager {
       
      // return array
       if visitArray.isEmpty {
-        completionHandler(nil,nil)
-      }else {
-        completionHandler(visitArray,nil)
+        completionHandler(nil, nil)
+      } else {
+        completionHandler(visitArray, nil)
       }
     }
   }
   
   /// Load visit entities from Firebase
-  func loadMyVisits(for currentUser: String, completionHandler:@escaping (_ visits: [Show]?, _ error: Error?)->()) {
+  func loadMyVisits(for currentUser: String, completionHandler:@escaping (_ visits: [Show]?, _ error: Error?) -> Void) {
     visitRef.observe(.value) { (snapshot, error) in
       var visitArray = [Show]()
       var newItems = [Show]()
@@ -100,8 +98,7 @@ class FirebaseManager {
         let newVisit = Show(snapshot: (item as? DataSnapshot)!)
         newItems.insert(newVisit, at: 0)
       }
-      
-      
+    
       // filter user visits
       for item in newItems where item.user == currentUser {
         visitArray.insert(item, at: 0)
@@ -113,13 +110,12 @@ class FirebaseManager {
       // return array
       if visitArray.isEmpty {
         completionHandler(nil, nil)
-      }else {
+      } else {
         completionHandler(visitArray, nil)
       }
     }
   }
-  
-  
+
   /// Updating method for visits
   func updateVisit(user: String, key: String?, date: String, title: String, id: String, imageUrl: String, completion: @escaping(_ status: String, _ error: Error?) -> Void) {
     
@@ -136,8 +132,6 @@ class FirebaseManager {
     }
   }
   
-  
- 
   /// This function delete a visit from Firebase Database
   ///
   /// - Parameters:
@@ -162,10 +156,6 @@ class FirebaseManager {
         completion(nil)
       }
     }
-  
-  
-
-  
   
   /// Create an entry username in database to verify if a user already exists
   ///
@@ -193,7 +183,7 @@ class FirebaseManager {
       completion("failure", error)
     }
     // Create an Auth for user
-    Auth.auth().createUser(withEmail: username, password: password) { (authResult, error) in
+    Auth.auth().createUser(withEmail: username, password: password) { (_, error) in
       if error != nil {
         
         completion("failure", error)
@@ -204,7 +194,7 @@ class FirebaseManager {
     let newUser = ["username": username, "lastName": lastName, "firstName": firstName, "date": date, "password": password, "authorization": authorization, "email": username] as [String: Any]
     
     // update DB
-    userRef.childByAutoId().setValue(newUser) {(error,_) in
+    userRef.childByAutoId().setValue(newUser) {(error, _) in
       if error != nil {
         completion("failure", error)
       } else {
@@ -214,7 +204,7 @@ class FirebaseManager {
   }
   
   /// Load visit entities from Firebase
-  func loadUsers( completionHandler:@escaping (_ users: [User]?, _ error: Error?)->()) {
+  func loadUsers( completionHandler:@escaping (_ users: [User]?, _ error: Error?) -> Void) {
     userRef.observe(.value) { (snapshot, error) in
       if error != nil {
         completionHandler(nil, error as? Error)
@@ -230,7 +220,7 @@ class FirebaseManager {
       // return users
       if userArray.isEmpty {
         completionHandler(nil, nil)
-      }else {
+      } else {
         completionHandler(userArray, nil)
       }
     }
@@ -242,7 +232,7 @@ class FirebaseManager {
     let parameters = ["username": username, "lastName": lastName, "firstName": firstName, "date": date, "password": password, "authorization": authorization] as [String: Any]
     
     // update DB
-    userRef.child(key!).updateChildValues(parameters) {(error,_) in
+    userRef.child(key!).updateChildValues(parameters) {(error, _) in
       if error != nil {
         completion("failure", error)
       } else {
@@ -256,8 +246,6 @@ class FirebaseManager {
     guard let ref = user.ref else { return}
     ref.removeValue()
   }
-  
-  
   
   func uploadImagePic(data: Data, completionhandler: @escaping (_ imageUrl: String, _ error: Error?) -> Void) {
     var imageUrl = ""

@@ -65,7 +65,7 @@ class EditUserViewController: UIViewController {
       // save object to firebase
       FirebaseManager.shared.updateUser(username: currentUser.username, key: userKey, lastName: lastNameField.text!, firstName: firstNameField.text!, date: saveDate, password: passwordField.text!, authorization: picker.selectedRow(inComponent: 0)) {(_, error) in
         if error != nil {
-          UserAlert.show(title:NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
+          UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
         }
         UserAlert.show(title: NSLocalizedString("Congratulations", comment: ""), message: NSLocalizedString("Your user has been updated", comment: ""), controller: self)
       }
@@ -77,7 +77,7 @@ class EditUserViewController: UIViewController {
   
   /// Handles the delation of a user in the firebase database
   @objc func deleteUser() {
-    let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message:NSLocalizedString("You are about to permanently delete a user", comment: ""), preferredStyle: .actionSheet)
+    let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("You are about to permanently delete a user", comment: ""), preferredStyle: .actionSheet)
     
     let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .default) { (_) in
       
@@ -110,7 +110,6 @@ extension EditUserViewController: UITextFieldDelegate {
     self.view.endEditing(true)
   }
   
-  
   /// When user presses enter on keyboard. it validates his text
   /// and send translation request. the keyboard disappear.
   ///
@@ -123,7 +122,7 @@ extension EditUserViewController: UITextFieldDelegate {
   
 }
 
-// MARK : - UIPickerViewDelegate, UIPickerViewDataSource METHODS
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource METHODS
 extension EditUserViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
@@ -145,7 +144,7 @@ extension EditUserViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     // change picker text color to white
-    let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+    let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     return attributedString
   }
 }

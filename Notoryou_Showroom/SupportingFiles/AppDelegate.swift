@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UINavigationBar.appearance().barTintColor = .black
     UINavigationBar.appearance().isOpaque = false
     UINavigationBar.appearance().barStyle = .blackOpaque
-    let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+    let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     UINavigationBar.appearance().titleTextAttributes = textAttributes
     
     // Set initial Controller without storyboard
@@ -61,6 +61,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
   
-  
 }
-

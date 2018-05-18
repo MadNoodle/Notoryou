@@ -29,7 +29,7 @@ class MyToursController: UIViewController, SideMenuItemContent {
   /// Property to store the selected show and send it
   var currentShow: Show?
   /// Array to store show links to send in mail
-  var showToExport = [(String,String)]()
+  var showToExport = [(String, String)]()
   /// property to store and retrieve user from user Default
   var currentUser = ""
   
@@ -72,7 +72,7 @@ class MyToursController: UIViewController, SideMenuItemContent {
         if error != nil {
           UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
         }
-        if result != nil{
+        if result != nil {
           self.shows = result!
           self.tableView.reloadData()
           self.hideLoader()
@@ -93,12 +93,11 @@ class MyToursController: UIViewController, SideMenuItemContent {
   }
 
   /// Set editing Mode
-  @objc func showEditing(sender: UIBarButtonItem)
-  {
+  @objc func showEditing(sender: UIBarButtonItem) {
     if self.tableView.isEditing == true {
       self.tableView.isEditing = false
       self.navigationItem.rightBarButtonItems![1].image = #imageLiteral(resourceName: "share ")
-      if showToExport.count == 0 {
+      if showToExport.isEmpty {
         UserAlert.show(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("Please coose a visit to share", comment: ""), controller: self)
       } else {
         shouldDisplayChoice()
@@ -122,14 +121,14 @@ class MyToursController: UIViewController, SideMenuItemContent {
     DispatchQueue.main.async {
       FirebaseManager.shared.loadVisits(for: self.currentUser) { (result, error) in
         if error != nil {
-          UserAlert.show(title: NSLocalizedString("Error", comment: ""), message:error!.localizedDescription , controller: self)
+          UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
         }
-        if result != nil{
+        if result != nil {
           self.shows = result!
           self.tableView.reloadData()
           self.hideLoader()
         } else {
-          UserAlert.show(title: NSLocalizedString("Sorry", comment: ""), message: NSLocalizedString("There is no tour available for you", comment: "") , controller: self)
+          UserAlert.show(title: NSLocalizedString("Sorry", comment: ""), message: NSLocalizedString("There is no tour available for you", comment: ""), controller: self)
         }
       }
     }
@@ -185,7 +184,7 @@ class MyToursController: UIViewController, SideMenuItemContent {
   }
   
   fileprivate func shouldDisplayChoice() {
-    let sendAction = UIAlertAction(title: NSLocalizedString("Send email", comment: ""), style: .default) { (action) in
+    let sendAction = UIAlertAction(title: NSLocalizedString("Send email", comment: ""), style: .default) { (_) in
       self.sendMail()
     }
     let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { (_) in
@@ -194,11 +193,10 @@ class MyToursController: UIViewController, SideMenuItemContent {
     let alertController = UIAlertController(title: NSLocalizedString("Confirm", comment: ""), message: NSLocalizedString("Do you want to share these links?", comment: ""), preferredStyle: .actionSheet)
     alertController.addAction(sendAction)
     alertController.addAction(cancelAction)
-    present(alertController, animated:  true)
+    present(alertController, animated: true)
   }
   
 }
-
 
 // MARK: - TABLEVIEW DELEGATE & DATASOURCE METHODS
 extension MyToursController: UITableViewDelegate, UITableViewDataSource {
@@ -233,7 +231,6 @@ extension MyToursController: UITableViewDelegate, UITableViewDataSource {
     return .insert
   }
   
-  
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     
     if editingStyle == .insert {
@@ -259,7 +256,7 @@ extension MyToursController: MFMailComposeViewControllerDelegate {
   fileprivate func sendMail() {
     let mailCompVc = configureMailComposerViewController()
     if MFMailComposeViewController.canSendMail() {
-      self.present(mailCompVc,animated: true)
+      self.present(mailCompVc, animated: true)
     } else {
       self.showSendMailErrorAlert()
     }
@@ -269,7 +266,7 @@ extension MyToursController: MFMailComposeViewControllerDelegate {
   ///
   /// - Parameter array: Links to send
   /// - Returns: Html body for mail
-  func generateMailBody(from array: [(String,String)]) -> String {
+  func generateMailBody(from array: [(String, String)]) -> String {
     var body = ""
     var links = [String]()
     for item in array {

@@ -49,7 +49,6 @@ class AddViewController: UIViewController {
     self.navigationItem.rightBarButtonItem = addButton
     }
 
-
   /// handles the privacy status of the currentVisit
   /// if public all users can see the visit else only admin and current user can see it
   /// - Parameter sender: switch
@@ -64,7 +63,6 @@ class AddViewController: UIViewController {
     }
   }
   
-
   /// CallBack function for save button that saves the visit in firebase
   @objc func saveVisit() {
    print("saving")
@@ -76,7 +74,7 @@ class AddViewController: UIViewController {
       
         // Convert to data to store it in Firebase Storage
         guard let data = UIImagePNGRepresentation(resizedImage) else { return}
-        FirebaseManager.shared.uploadImagePic(data: data, completionhandler:  { (newUrl, error) in
+        FirebaseManager.shared.uploadImagePic(data: data, completionhandler: {(newUrl, error) in
           if error != nil {
             UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
           }
@@ -102,7 +100,6 @@ class AddViewController: UIViewController {
     }
   }
 
-  
   /// Self Documented
   fileprivate func showLoader() {
     // show spinner
@@ -133,7 +130,6 @@ extension AddViewController: UITextFieldDelegate {
     self.view.endEditing(true)
   }
   
-  
   /// When user presses enter on keyboard. it validates his text
   /// and send translation request. the keyboard disappear.
   ///
@@ -142,8 +138,8 @@ extension AddViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     if textField.tag == 1 {
-      guard let url = URL(string:previewTextField.text!) else { return true }
-      thumbnailView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logonb"), options: [.progressiveDownload]) { (image, error, cache, url) in
+      guard let url = URL(string: previewTextField.text!) else { return true }
+      thumbnailView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logonb"), options: [.progressiveDownload]) { (_, error, _, _) in
         if error != nil {
           UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Please enter a valid url", comment: ""), controller: self)
         }

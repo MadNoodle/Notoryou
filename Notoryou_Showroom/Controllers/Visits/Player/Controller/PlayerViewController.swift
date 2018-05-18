@@ -37,7 +37,6 @@ class PlayerViewController: UIViewController {
     shouldDisplayVisit()
     }
 
- 
   // MARK: - UI METHODS
   /// load visit in WKWebView
   fileprivate func shouldDisplayVisit() {
@@ -47,7 +46,7 @@ class PlayerViewController: UIViewController {
     wkView.load(myRequest)
   }
   
-  // MMARK: - SELECTORS
+  // MARK: - SELECTORS
   
   /// Callback function to edit the current visit
   @objc func editVisit() {
@@ -80,7 +79,7 @@ class PlayerViewController: UIViewController {
 }
 
 // MARK: - WKUIDelegate, WKNavigationDelegate
-extension PlayerViewController:WKUIDelegate, WKNavigationDelegate {
+extension PlayerViewController: WKUIDelegate, WKNavigationDelegate {
   
   func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
     if navigationAction.targetFrame == nil {

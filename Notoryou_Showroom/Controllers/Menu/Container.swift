@@ -36,9 +36,6 @@ class Container: MenuContainerViewController {
     
     self.currentItemOptions.cornerRadius = 10.0
   }
-  
- 
-  
 
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
@@ -53,8 +50,7 @@ class Container: MenuContainerViewController {
     options.visibleContentWidth = size.width / 6
     self.transitionOptions = options
   }
-  
-  
+
    // MARK: - MENU METHODS
   
   /// This methods gather all menu controllers to create links

@@ -10,7 +10,6 @@ import UIKit
 import FirebaseAuth
 import InteractiveSideMenu
 
-
 /// The controller allows the user to manage users
 class UserManagerViewController: UIViewController, SideMenuItemContent {
   
@@ -26,7 +25,7 @@ class UserManagerViewController: UIViewController, SideMenuItemContent {
   /// Array to store and retrieve users from database
   var users = [User]()
   
-  // MARK : - OUTLETS
+  // MARK: - OUTLETS
   @IBOutlet weak var tableView: UITableView!
   
   // MARK: - LIFECYCLE METHODS
@@ -40,7 +39,6 @@ class UserManagerViewController: UIViewController, SideMenuItemContent {
     self.tableView.dataSource = self
     let nib = UINib(nibName: "UserCell", bundle: nil)
     self.tableView.register(nib, forCellReuseIdentifier: "cellId")
-    
     
     // NavigationBar Setup
     self.navigationController?.navigationBar.isTranslucent = false
@@ -113,7 +111,7 @@ extension UserManagerViewController: UITableViewDelegate, UITableViewDataSource 
   @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
     //Load database for user and public
     DispatchQueue.main.async {
-      FirebaseManager.shared.loadUsers() { (results, error) in
+      FirebaseManager.shared.loadUsers { (results, error) in
         if error != nil {
           UserAlert.show(title: NSLocalizedString("Error", comment: ""), message: error!.localizedDescription, controller: self)
         }

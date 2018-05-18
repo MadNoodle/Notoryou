@@ -20,7 +20,7 @@ extension UIImage {
     let scale = newWidth / self.size.width
     let newHeight = self.size.height * scale
     // capture image and create an image with desired size
-    UIGraphicsBeginImageContext(CGSize(width: newWidth,height: newHeight))
+    UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
     self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
     let newImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
@@ -49,7 +49,7 @@ extension UIImageView {
     }
     
     // Fetch image from remote
-    let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+    let task = URLSession.shared.dataTask(with: url!) { (data, _, error) in
       // send to bg queue
       DispatchQueue.main.async {
         // unwrap image as data
@@ -59,7 +59,7 @@ extension UIImageView {
             imageCache.setObject(imageToCache, forKey: urlString as AnyObject)
             self.image = imageToCache
           }
-        } else if let error = error  {
+        } else if let error = error {
           print("USER INFO ERROR: \(error.localizedDescription)")
           // placeholder Image
           self.image = #imageLiteral(resourceName: "logonb")
