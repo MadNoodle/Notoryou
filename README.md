@@ -15,6 +15,7 @@ Notoryou Showroom allows the user to enjoy immersive tours of cultural events su
 <img src="https://user-images.githubusercontent.com/23486492/40708028-9e3326c2-63f2-11e8-8633-4cd1ebd63b49.jpg" width="180">
   </div>
 Notoryou is available ont he appStore for All iOS devices with minimum : iOS: 10.0
+
 [![Download on the App Store](http://linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg)](https://itunes.apple.com/fr/app/notoryou-showroom/id1383639461?mt=8)
 
 ## 🔧 Usage
